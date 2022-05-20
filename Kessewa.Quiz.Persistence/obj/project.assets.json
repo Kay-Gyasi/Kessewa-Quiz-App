@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Persistence\\Kessewa.Quiz.Domain.csproj",
-      "projectName": "Kessewa.Quiz.Domain",
-      "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Persistence\\Kessewa.Quiz.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Persistence\\Kessewa.Quiz.Persistence.csproj",
+      "projectName": "Kessewa.Quiz.Persistence",
+      "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Persistence\\Kessewa.Quiz.Persistence.csproj",
       "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Persistence\\obj\\",
       "projectStyle": "PackageReference",

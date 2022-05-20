@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xjY5noZPyYGWiDPgaHIJCqmbjF3gCq1FJBYzkBad4yuJcQoC5Lb9JjeRCCrYWG5IzXCTJyvx6F2EvHgbsD76gg==",
+  "dgSpecHash": "DxidVyqHgEezZr3Njfp2kx+gbP08YG0q9/tY6jwW/9q4FKSrIhiB7rKzL7P80x3tbvD2SFoFNfcL8gGaQM1BVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Persistence\\Kessewa.Quiz.Domain.csproj",
+  "projectFilePath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Persistence\\Kessewa.Quiz.Persistence.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

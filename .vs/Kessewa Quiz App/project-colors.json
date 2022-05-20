@@ -1,0 +1,56 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "56c5ddb5-cb81-412b-b281-fc04ca99a0be": {
+      "ProjectGuid": "56c5ddb5-cb81-412b-b281-fc04ca99a0be",
+      "DisplayName": "Kessewa.Quiz.Integration.Tests",
+      "ColorIndex": 0
+    },
+    "7cfe7738-71fb-421a-ba3c-ee938b063646": {
+      "ProjectGuid": "7cfe7738-71fb-421a-ba3c-ee938b063646",
+      "DisplayName": "Kessewa.Quiz.Unit.Tests",
+      "ColorIndex": 1
+    },
+    "5d89b2e2-6b84-4575-a588-4204f673ce4a": {
+      "ProjectGuid": "5d89b2e2-6b84-4575-a588-4204f673ce4a",
+      "DisplayName": "Kessewa.Quiz.Domain",
+      "ColorIndex": 2
+    },
+    "8b724aa0-5553-4bba-98a6-f771a3cb499e": {
+      "ProjectGuid": "8b724aa0-5553-4bba-98a6-f771a3cb499e",
+      "DisplayName": "Kessewa.Shared.Domain",
+      "ColorIndex": 3
+    },
+    "254af57d-381c-49c3-bb44-9b6619ad3087": {
+      "ProjectGuid": "254af57d-381c-49c3-bb44-9b6619ad3087",
+      "DisplayName": "Kessewa.Quiz.Student.UI",
+      "ColorIndex": 4
+    },
+    "85fd18ea-3861-4c7a-a984-54c3c8321d74": {
+      "ProjectGuid": "85fd18ea-3861-4c7a-a984-54c3c8321d74",
+      "DisplayName": "Kessewa.Quiz.Processors",
+      "ColorIndex": 5
+    },
+    "96c43197-5635-4fba-9c8a-2973825aea17": {
+      "ProjectGuid": "96c43197-5635-4fba-9c8a-2973825aea17",
+      "DisplayName": "Kessewa.Quiz.Application",
+      "ColorIndex": 6
+    },
+    "922cd019-21e1-4a78-9657-14691f097869": {
+      "ProjectGuid": "922cd019-21e1-4a78-9657-14691f097869",
+      "DisplayName": "Kessewa.Quiz.Domain",
+      "ColorIndex": 7
+    },
+    "020a1922-ea22-41e9-8575-9130ccf4a754": {
+      "ProjectGuid": "020a1922-ea22-41e9-8575-9130ccf4a754",
+      "DisplayName": "Kessewa.Quiz.Persistence",
+      "ColorIndex": 8
+    },
+    "326168f1-5de9-42ef-9ed5-dadf72122f51": {
+      "ProjectGuid": "326168f1-5de9-42ef-9ed5-dadf72122f51",
+      "DisplayName": "Kessewa.Quiz.Infrastructure",
+      "ColorIndex": 9
+    }
+  },
+  "NextColorIndex": 10
+}
