@@ -1,0 +1,8 @@
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Teache.UI\obj\Debug\net6.0\Kessewa.Quiz.Teacher.UI.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Teache.UI\obj\Debug\net6.0\Kessewa.Quiz.Teacher.UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Teache.UI\obj\Debug\net6.0\Kessewa.Quiz.Teacher.UI.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Teache.UI\obj\Debug\net6.0\Kessewa.Quiz.Teacher.UI.AssemblyInfo.cs
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Teache.UI\obj\Debug\net6.0\Kessewa.Quiz.Teacher.UI.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Teache.UI\obj\Debug\net6.0\Kessewa.Quiz.Teacher.UI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Teache.UI\obj\Debug\net6.0\Kessewa.Quiz.Teacher.UI.RazorAssemblyInfo.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Teache.UI\obj\Debug\net6.0\Kessewa.Quiz.Teacher.UI.RazorAssemblyInfo.cs
