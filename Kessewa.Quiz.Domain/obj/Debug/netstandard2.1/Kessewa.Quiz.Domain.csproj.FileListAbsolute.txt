@@ -1,0 +1,10 @@
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\bin\Debug\netstandard2.1\Kessewa.Quiz.Domain.deps.json
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\bin\Debug\netstandard2.1\Kessewa.Quiz.Domain.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\bin\Debug\netstandard2.1\Kessewa.Quiz.Domain.pdb
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\obj\Debug\netstandard2.1\Kessewa.Quiz.Domain.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\obj\Debug\netstandard2.1\Kessewa.Quiz.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\obj\Debug\netstandard2.1\Kessewa.Quiz.Domain.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\obj\Debug\netstandard2.1\Kessewa.Quiz.Domain.AssemblyInfo.cs
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\obj\Debug\netstandard2.1\Kessewa.Quiz.Domain.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\obj\Debug\netstandard2.1\Kessewa.Quiz.Domain.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Domain\obj\Debug\netstandard2.1\Kessewa.Quiz.Domain.pdb

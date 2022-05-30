@@ -50,7 +50,22 @@
       "ProjectGuid": "326168f1-5de9-42ef-9ed5-dadf72122f51",
       "DisplayName": "Kessewa.Quiz.Infrastructure",
       "ColorIndex": 9
+    },
+    "4d231510-b15b-44f9-bcab-b8e90a0775fc": {
+      "ProjectGuid": "4d231510-b15b-44f9-bcab-b8e90a0775fc",
+      "DisplayName": "Kessewa.Quiz.Persistence",
+      "ColorIndex": 10
+    },
+    "fc58576b-9ea7-4294-acf2-5d3e914d91dd": {
+      "ProjectGuid": "fc58576b-9ea7-4294-acf2-5d3e914d91dd",
+      "DisplayName": "Kessewa.Quiz.Persistence",
+      "ColorIndex": 11
+    },
+    "21bea923-681c-42f5-9233-60dbc805cdf2": {
+      "ProjectGuid": "21bea923-681c-42f5-9233-60dbc805cdf2",
+      "DisplayName": "Kessewa.Quiz.Domain",
+      "ColorIndex": 12
     }
   },
-  "NextColorIndex": 10
+  "NextColorIndex": 13
 }

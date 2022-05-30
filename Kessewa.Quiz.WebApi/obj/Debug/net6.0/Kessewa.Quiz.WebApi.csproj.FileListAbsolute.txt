@@ -4,7 +4,6 @@ C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\Kessewa.Quiz.WebApi.deps.json
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\Kessewa.Quiz.WebApi.runtimeconfig.json
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\Kessewa.Quiz.WebApi.dll
-C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\ref\Kessewa.Quiz.WebApi.dll
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\Kessewa.Quiz.WebApi.pdb
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -22,6 +21,7 @@ C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\scopedcss\bundle\Kessewa.Quiz.WebApi.styles.css
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\Kessewa.Quiz.WebApi.csproj.CopyComplete
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\Kessewa.Quiz.WebApi.dll
-C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\ref\Kessewa.Quiz.WebApi.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\refint\Kessewa.Quiz.WebApi.dll
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\Kessewa.Quiz.WebApi.pdb
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\Kessewa.Quiz.WebApi.genruntimeconfig.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\ref\Kessewa.Quiz.WebApi.dll

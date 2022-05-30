@@ -31,9 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kessewa.Quiz.WebApi", "Kess
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{C3FD940E-50D5-4051-A7EB-F59766885CE5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Teacher's UI", "Teacher's UI", "{4E9C076B-2619-4FD5-A852-BD81DE6D3001}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TeacherUI", "TeacherUI", "{4E9C076B-2619-4FD5-A852-BD81DE6D3001}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Student's UI", "Student's UI", "{AD2B4148-3CB4-4C70-B362-9CBA3C368304}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StudentUI", "StudentUI", "{AD2B4148-3CB4-4C70-B362-9CBA3C368304}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kessewa.Quiz.Processors", "Kessewa.Quiz.Processors\Kessewa.Quiz.Processors.csproj", "{85FD18EA-3861-4C7A-A984-54C3C8321D74}"
 EndProject
@@ -47,11 +47,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kessewa.Quiz.Teachers.UI", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistence", "Persistence", "{650AB79D-60C2-4F84-A49D-1F353D114780}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kessewa.Quiz.Persistence", "Kessewa.Quiz.Persistence\Kessewa.Quiz.Persistence.csproj", "{FC58576B-9EA7-4294-ACF2-5D3E914D91DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kessewa.Quiz.Persistence", "Kessewa.Quiz.Persistence\Kessewa.Quiz.Persistence.csproj", "{FC58576B-9EA7-4294-ACF2-5D3E914D91DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F334E88C-3C7B-45D1-AA0A-DFD50AA61DA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kessewa.Quiz.Domain", "Kessewa.Quiz.Domain\Kessewa.Quiz.Domain.csproj", "{21BEA923-681C-42F5-9233-60DBC805CDF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kessewa.Quiz.Domain", "Kessewa.Quiz.Domain\Kessewa.Quiz.Domain.csproj", "{21BEA923-681C-42F5-9233-60DBC805CDF2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmarker", "Benchmarker", "{0346F738-84E2-4641-AAE2-A25D0DA8B4B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -127,6 +129,7 @@ Global
 		{FC58576B-9EA7-4294-ACF2-5D3E914D91DD} = {650AB79D-60C2-4F84-A49D-1F353D114780}
 		{F334E88C-3C7B-45D1-AA0A-DFD50AA61DA0} = {010D8BA6-E1F8-4195-B440-AF883ACA19CF}
 		{21BEA923-681C-42F5-9233-60DBC805CDF2} = {F334E88C-3C7B-45D1-AA0A-DFD50AA61DA0}
+		{0346F738-84E2-4641-AAE2-A25D0DA8B4B6} = {FA5C7659-1ED7-4D1C-987E-198BCD80F8C1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C93A2744-D85D-4892-83FA-0B2DCBAAAFB8}

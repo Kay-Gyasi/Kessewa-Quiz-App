@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LdztBtz17ShXKEiS50WWr91zvfIvz/KV9FrHDC4k6t24+MI1fQo85tYf6cok3kjpDQ9dzymIUW2EHD0VFo5BEg==",
+  "dgSpecHash": "zwtCspePiKo6+OGkVkBnamwVdVa4atNDaV127FNDuEWkTqBHM5DPSFgXfU2t1LCPYcdz47G+4uHr25znaGA86w==",
   "success": true,
   "projectFilePath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Student.UI\\Kessewa.Quiz.Student.UI.csproj",
   "expectedPackageFiles": [
@@ -33,7 +33,7 @@
     "C:\\Users\\admin\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.0\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.0.nupkg.sha512"
+    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.5\\microsoft.netcore.app.runtime.mono.browser-wasm.6.0.5.nupkg.sha512"
   ],
   "logs": []
 }
