@@ -6,7 +6,7 @@ using Kessewa.Quiz.Domain.ValueObjects;
 
 namespace Kessewa.Quiz.Domain.Entities
 {
-    public class Users : ClassBase
+    public class Users : EntityBase
     {
         public string FirstName { get; private set; }
         public string LastName { get; private set; }

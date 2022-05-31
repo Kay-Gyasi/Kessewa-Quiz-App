@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v1TP7Fxa1h/NyNs9SKibb/ZB7DFnWsKEeJQ7kshSxNr04Lx97kCHHIJtHeNagm0CBH3PyhAYFUkNi4IPxcjGFA==",
+  "dgSpecHash": "Af3WS7CBfrBnUrlOEMDhGXhVjaqwBbVTr4tGB/BUSbFrPc/Yb32ztQ19M/8d+scUrc6tRM6k+/ClZ0KKeHcGIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Seeder\\Seeder.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\admin\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.25\\microsoft.netcore.app.host.win-x64.3.1.25.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

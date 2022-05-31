@@ -6,7 +6,7 @@ using Kessewa.Quiz.Domain.ValueObjects;
 
 namespace Kessewa.Quiz.Domain.Entities
 {
-    public class Submissions : ClassBase
+    public class Submissions : EntityBase
     {
         public int QuizId { get; private set; }
         public int StudentId { get; private set; }

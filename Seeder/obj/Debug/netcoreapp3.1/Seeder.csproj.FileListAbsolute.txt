@@ -1,0 +1,14 @@
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\bin\Debug\netcoreapp3.1\Seeder.exe
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\bin\Debug\netcoreapp3.1\Seeder.deps.json
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\bin\Debug\netcoreapp3.1\Seeder.runtimeconfig.json
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\bin\Debug\netcoreapp3.1\Seeder.runtimeconfig.dev.json
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\bin\Debug\netcoreapp3.1\Seeder.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\bin\Debug\netcoreapp3.1\Seeder.pdb
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\obj\Debug\netcoreapp3.1\Seeder.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\obj\Debug\netcoreapp3.1\Seeder.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\obj\Debug\netcoreapp3.1\Seeder.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\obj\Debug\netcoreapp3.1\Seeder.AssemblyInfo.cs
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\obj\Debug\netcoreapp3.1\Seeder.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\obj\Debug\netcoreapp3.1\Seeder.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\obj\Debug\netcoreapp3.1\Seeder.pdb
+C:\Users\admin\source\repos\Kessewa Quiz App\Seeder\obj\Debug\netcoreapp3.1\Seeder.genruntimeconfig.cache

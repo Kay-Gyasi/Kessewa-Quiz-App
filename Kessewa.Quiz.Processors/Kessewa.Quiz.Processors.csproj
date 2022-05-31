@@ -5,4 +5,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Kessewa.Application.Shared\Kessewa.Application.Shared.csproj" />
+    <ProjectReference Include="..\Kessewa.Quiz.Domain\Kessewa.Quiz.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

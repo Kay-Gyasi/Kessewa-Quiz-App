@@ -5,7 +5,7 @@ using Kessewa.Quiz.Domain.Enums;
 
 namespace Kessewa.Quiz.Domain.Entities
 {
-    public class Lecturers : ClassBase
+    public class Lecturers : EntityBase
     {
 
         public int UserId { get; private set; }

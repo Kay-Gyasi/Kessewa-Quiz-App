@@ -6,7 +6,7 @@ using Kessewa.Quiz.Domain.Entities.Base;
 
 namespace Kessewa.Quiz.Domain.Entities
 {
-    public class Quizzes : ClassBase
+    public class Quizzes : EntityBase
     {
 
         public int CourseId { get; private set; }

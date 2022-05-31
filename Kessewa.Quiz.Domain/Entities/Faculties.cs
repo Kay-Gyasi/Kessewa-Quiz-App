@@ -2,7 +2,7 @@
 
 namespace Kessewa.Quiz.Domain.Entities
 {
-    public class Faculties : ClassBase
+    public class Faculties : EntityBase
     {
 
 

@@ -1,22 +1,39 @@
 using Kessewa.Quiz.WebApi;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddQuizWebApi(builder.Configuration);
-
 WebApplication app;
+
 try
 {
+
+    builder.Services.AddControllers();
+    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+    builder.Services.AddQuizWebApi(builder.Configuration);
+
+    var logger = new LoggerConfiguration()
+        .ReadFrom.Configuration(builder.Configuration)
+        .Enrich.FromLogContext()
+        .CreateLogger();
+
+    builder.Host.UseSerilog(logger);
+    builder.Logging.ClearProviders();
+    builder.Logging.AddSerilog(logger);
+
+
+    Log.Information("Application starting up");
     app = builder.Build();
 }
 catch (Exception e)
 {
-    Console.WriteLine(e.Message);
+    Log.Fatal(e.Message);
     throw;
+}
+finally
+{
+    Log.CloseAndFlush();
 }
 
 
@@ -28,6 +45,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseSerilogRequestLogging();
 
 app.UseAuthorization();
 

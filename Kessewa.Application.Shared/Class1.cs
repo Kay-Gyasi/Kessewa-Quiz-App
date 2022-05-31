@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kessewa.Quiz.Processors
+namespace Kessewa.Application.Shared
 {
     public class Class1
     {

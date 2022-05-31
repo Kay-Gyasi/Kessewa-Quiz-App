@@ -5,7 +5,7 @@ using Kessewa.Quiz.Domain.ValueObjects;
 
 namespace Kessewa.Quiz.Domain.Entities
 {
-    public class Questions : ClassBase
+    public class Questions : EntityBase
     {
         public int QuizId { get; private set; }
         public double MarksAllocated { get; private set; }

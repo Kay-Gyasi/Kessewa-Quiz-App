@@ -60,7 +60,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seeder", "Seeder\Seeder.csproj", "{F327B51F-C3F6-4B0B-9169-0BF8907E0CA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Seeder", "Seeder\Seeder.csproj", "{F327B51F-C3F6-4B0B-9169-0BF8907E0CA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kessewa.Application.Shared", "Kessewa.Application.Shared\Kessewa.Application.Shared.csproj", "{BAA43C9C-CBF4-4E28-8C10-91CC471976C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -112,6 +114,10 @@ Global
 		{F327B51F-C3F6-4B0B-9169-0BF8907E0CA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F327B51F-C3F6-4B0B-9169-0BF8907E0CA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F327B51F-C3F6-4B0B-9169-0BF8907E0CA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAA43C9C-CBF4-4E28-8C10-91CC471976C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA43C9C-CBF4-4E28-8C10-91CC471976C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA43C9C-CBF4-4E28-8C10-91CC471976C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA43C9C-CBF4-4E28-8C10-91CC471976C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +148,7 @@ Global
 		{21BEA923-681C-42F5-9233-60DBC805CDF2} = {F334E88C-3C7B-45D1-AA0A-DFD50AA61DA0}
 		{0346F738-84E2-4641-AAE2-A25D0DA8B4B6} = {FA5C7659-1ED7-4D1C-987E-198BCD80F8C1}
 		{F327B51F-C3F6-4B0B-9169-0BF8907E0CA1} = {0346F738-84E2-4641-AAE2-A25D0DA8B4B6}
+		{BAA43C9C-CBF4-4E28-8C10-91CC471976C5} = {1E2677C5-1EA1-491D-A75A-39E5DCE13FA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C93A2744-D85D-4892-83FA-0B2DCBAAAFB8}

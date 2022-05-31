@@ -5,7 +5,7 @@ using Kessewa.Quiz.Domain.ValueObjects;
 
 namespace Kessewa.Quiz.Domain.Entities
 {
-    public class Departments : ClassBase
+    public class Departments : EntityBase
     {
 
 

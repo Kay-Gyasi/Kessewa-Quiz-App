@@ -1,10 +1,15 @@
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\bin\Debug\netstandard2.1\Kessewa.Quiz.Processors.deps.json
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\bin\Debug\netstandard2.1\Kessewa.Quiz.Processors.dll
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\bin\Debug\netstandard2.1\Kessewa.Quiz.Processors.pdb
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\bin\Debug\netstandard2.1\Kessewa.Application.Shared.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\bin\Debug\netstandard2.1\Kessewa.Quiz.Domain.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\bin\Debug\netstandard2.1\Kessewa.Application.Shared.pdb
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\bin\Debug\netstandard2.1\Kessewa.Quiz.Domain.pdb
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\obj\Debug\netstandard2.1\Kessewa.Quiz.Processors.csproj.AssemblyReference.cache
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\obj\Debug\netstandard2.1\Kessewa.Quiz.Processors.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\obj\Debug\netstandard2.1\Kessewa.Quiz.Processors.AssemblyInfoInputs.cache
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\obj\Debug\netstandard2.1\Kessewa.Quiz.Processors.AssemblyInfo.cs
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\obj\Debug\netstandard2.1\Kessewa.Quiz.Processors.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\obj\Debug\netstandard2.1\Kessewa.Quiz.Processors.csproj.CopyComplete
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\obj\Debug\netstandard2.1\Kessewa.Quiz.Processors.dll
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Processors\obj\Debug\netstandard2.1\Kessewa.Quiz.Processors.pdb
