@@ -4,8 +4,35 @@ namespace Kessewa.Quiz.Domain.Entities
 {
     public class Faculties : ClassBase
     {
+
+
         public string Name { get; private set; }
-        public string Description { get; private set; }
+        public string Description { get; private set; }        
+        
+        private Faculties() { }
+
+        private Faculties(string name)
+        {
+            Name = name;
+        }
+
+        public static Faculties Create(string name)
+        {
+            return new Faculties(name);
+        }
+
+        public Faculties WithName(string name)
+        {
+            Name = name;
+            return this;
+        }
+
+        public Faculties WithDescription(string description)
+        {
+            Description = description;
+            return this;
+        }
+
         
     }
 }
