@@ -13,7 +13,7 @@ namespace Kessewa.Quiz.Domain.Entities
         public DateTime TimeSubmitted { get; private set; }
         public Quizzes Quiz { get; private set; }
         public Students Student { get; private set; }
-        public HashSet<Choices> Choices { get; private set; } = new HashSet<Choices>();
+        public List<Choices> Choices { get; private set; } = new List<Choices>();
 
         private Submissions() { }
 
@@ -26,6 +26,12 @@ namespace Kessewa.Quiz.Domain.Entities
         public static Submissions Create(int quizId, int studentId)
         {
             return new Submissions(quizId, studentId);
+        }
+
+        public Submissions SetId(int id)
+        {
+            Id = id;
+            return this;
         }
 
         public Submissions WithQuizId(int quizId)
@@ -60,7 +66,7 @@ namespace Kessewa.Quiz.Domain.Entities
 
         public Submissions WithChoices(IEnumerable<Choices> choices)
         {
-            Choices = choices.ToHashSet();
+            Choices = choices.ToList();
             return this;
         }
     }

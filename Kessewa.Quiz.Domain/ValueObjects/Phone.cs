@@ -1,7 +1,29 @@
-﻿namespace Kessewa.Quiz.Domain.ValueObjects
+﻿using System.Collections.Generic;
+using Kessewa.Quiz.Domain.ValueObjects.Base;
+
+namespace Kessewa.Quiz.Domain.ValueObjects
 {
-    public class Phone
+    public class Phone : ValueObject
     {
-        public string PhoneNumber { get; set; }
+        private Phone()
+        {
+            
+        }
+        private Phone(string phoneNumber)
+        {
+            PhoneNumber = phoneNumber;
+        }
+
+        public static Phone Create(string phoneNumber)
+        {
+            return new Phone(phoneNumber);
+        }
+
+        
+        public string PhoneNumber { get; }
+        protected override IEnumerable<object> GetEqualityComponents()
+        {
+            yield return PhoneNumber;
+        }
     }
 }

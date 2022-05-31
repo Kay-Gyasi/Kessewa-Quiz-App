@@ -17,12 +17,12 @@ namespace Kessewa.Quiz.Domain.Entities
         public Faculties Faculty { get; private set; }
 
 
-        private readonly HashSet<Lecturers> lecturers = new HashSet<Lecturers>();
-        public IReadOnlyList<Lecturers> Lecturers => lecturers.ToList().AsReadOnly();
-        private readonly HashSet<Students> students = new HashSet<Students>();
-        public IReadOnlyList<Students> Students => students.ToList().AsReadOnly();
-        private readonly HashSet<Courses> courses = new HashSet<Courses>();
-        public IReadOnlyList<Courses> Courses => courses.ToList().AsReadOnly();        
+        private readonly List<Lecturers> lecturers = new List<Lecturers>();
+        public IReadOnlyList<Lecturers> Lecturers => lecturers.AsReadOnly();
+        private readonly List<Students> students = new List<Students>();
+        public IReadOnlyList<Students> Students => students.AsReadOnly();
+        private readonly List<Courses> courses = new List<Courses>();
+        public IReadOnlyList<Courses> Courses => courses.AsReadOnly();        
 
         
         private Departments() { }
@@ -36,6 +36,12 @@ namespace Kessewa.Quiz.Domain.Entities
         public static Departments Create(string name, int facultyId)
         {
             return new Departments(name, facultyId);
+        }
+
+        public Departments SetId(int id)
+        {
+            Id = id;
+            return this;
         }
 
         public Departments WithName(string name)

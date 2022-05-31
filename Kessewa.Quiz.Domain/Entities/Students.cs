@@ -24,6 +24,12 @@ namespace Kessewa.Quiz.Domain.Entities
             return new Students(userId, departmentId);
         }
 
+        public Students SetId(int id)
+        {
+            Id = id;
+            return this;
+        }
+
         public Students WithUserId(int userId)
         {
             UserId = userId;

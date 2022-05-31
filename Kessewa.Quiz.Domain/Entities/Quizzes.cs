@@ -8,6 +8,18 @@ namespace Kessewa.Quiz.Domain.Entities
 {
     public class Quizzes : ClassBase
     {
+
+        public int CourseId { get; private set; }
+        public string Name { get; private set; }
+        public DateTime DateToBeTaken { get; private set; }
+        public DateTime TimeToBeTaken { get; private set; }
+        public int Duration { get; private set; }
+        public Courses Course { get; private set; }
+
+        private readonly List<Questions> _questions = new List<Questions>();
+        public IReadOnlyList<Questions> Questions => _questions.AsReadOnly();
+        private readonly List<Submissions> _submissions = new List<Submissions>();
+        public IReadOnlyList<Submissions> Submissions => _submissions.AsReadOnly();
         private Quizzes() { }
 
         private Quizzes(string name, int courseId)
@@ -21,6 +33,11 @@ namespace Kessewa.Quiz.Domain.Entities
             return new Quizzes(name, courseId);
         }
 
+        public Quizzes SetId(int id)
+        {
+            Id = id;
+            return this;
+        }
         public Quizzes WithCourseId(int courseId)
         {
             CourseId = courseId;
@@ -56,17 +73,5 @@ namespace Kessewa.Quiz.Domain.Entities
             Course = course;
             return this;
         }
-
-        public int CourseId { get; private set; }
-        public string Name { get; private set; }
-        public DateTime DateToBeTaken { get; private set; }
-        public DateTime TimeToBeTaken { get; private set; }
-        public int Duration { get; private set; }
-        public Courses Course { get; private set; }
-
-        private readonly HashSet<Questions> _questions = new HashSet<Questions>();
-        public IReadOnlyList<Questions> Questions => _questions.ToList().AsReadOnly();
-        private readonly HashSet<Submissions> _submissions = new HashSet<Submissions>();
-        public IReadOnlyList<Submissions> Submissions => _submissions.ToList().AsReadOnly();
     }
 }

@@ -15,7 +15,7 @@ namespace Kessewa.Quiz.Domain.Entities
         public string Description { get; private set; }
         public Lecturers Lecturer { get; private set; }
 
-        private readonly HashSet<Departments> departments = new HashSet<Departments>();
+        private readonly List<Departments> departments = new List<Departments>();
         public IReadOnlyList<Departments> Departments => departments.ToList().AsReadOnly();        
         
         private Courses() { }
@@ -30,6 +30,12 @@ namespace Kessewa.Quiz.Domain.Entities
             return new Courses(name);
         }
 
+        public Courses SetId(int id)
+        {
+            Id = id;
+            return this;
+        }
+        
         public Courses WithName(string name)
         {
             Name = name;

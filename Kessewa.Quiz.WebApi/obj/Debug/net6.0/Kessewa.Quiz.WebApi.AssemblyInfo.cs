@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("07d4f3f6-2f2b-4aaa-ad74-44bbf72ad94d")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Kessewa.Quiz.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

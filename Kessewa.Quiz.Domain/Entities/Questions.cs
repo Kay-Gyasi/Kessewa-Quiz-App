@@ -10,9 +10,8 @@ namespace Kessewa.Quiz.Domain.Entities
         public int QuizId { get; private set; }
         public double MarksAllocated { get; private set; }
         public Question Question { get; private set; }
-        public Answer Answer { get; private set; }
         public Quizzes Quiz { get; private set; }
-        public HashSet<Answer> Options { get; private set; } = new HashSet<Answer>();        
+        public List<Answer> Options { get; private set; } = new List<Answer>();        
         
         private Questions() { }
 
@@ -26,6 +25,11 @@ namespace Kessewa.Quiz.Domain.Entities
             return new Questions(quizId);
         }
 
+        public Questions SetId(int id)
+        {
+            Id = id;
+            return this;
+        }
         public Questions WithQuizId(int quizId)
         {
             QuizId = quizId;
@@ -44,12 +48,6 @@ namespace Kessewa.Quiz.Domain.Entities
             return this;
         }
 
-        public Questions WithAnswer(Answer answer)
-        {
-            Answer = answer;
-            return this;
-        }
-
         public Questions ForQuiz(Quizzes quiz)
         {
             Quiz = quiz;
@@ -58,7 +56,7 @@ namespace Kessewa.Quiz.Domain.Entities
 
         public Questions WithOptions(IEnumerable<Answer> options)
         {
-            Options = options.ToHashSet();
+            Options = options.ToList();
             return this;
         }
 

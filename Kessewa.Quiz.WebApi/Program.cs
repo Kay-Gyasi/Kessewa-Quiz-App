@@ -1,13 +1,24 @@
-var builder = WebApplication.CreateBuilder(args);
+using Kessewa.Quiz.WebApi;
 
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddQuizWebApi(builder.Configuration);
 
-var app = builder.Build();
+WebApplication app;
+try
+{
+    app = builder.Build();
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+    throw;
+}
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

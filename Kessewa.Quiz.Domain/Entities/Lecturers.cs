@@ -12,8 +12,8 @@ namespace Kessewa.Quiz.Domain.Entities
         public LecturerType Type { get; private set; }
         public Users User { get; private set; }
 
-        private readonly HashSet<Courses> courses = new HashSet<Courses>();
-        public IReadOnlyList<Courses> Courses => courses.ToList().AsReadOnly();        
+        private readonly List<Courses> courses = new List<Courses>();
+        public IReadOnlyList<Courses> Courses => courses.AsReadOnly();        
 
         
         private Lecturers() { }
@@ -29,6 +29,11 @@ namespace Kessewa.Quiz.Domain.Entities
             return new Lecturers(userId, type);
         }
 
+        public Lecturers SetId(int id)
+        {
+            Id = id;
+            return this;
+        }
         public Lecturers OfType(LecturerType type)
         {
             Type = type;

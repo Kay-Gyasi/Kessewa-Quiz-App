@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "srL6OiiUpQ1Y+UBvTbT02spYz2Zu1yU1i4B5JGlAPb+8cwQ3t7gjru4qmGrrc/fVDF+MG+uqSIxL69jRB9QM7Q==",
+  "dgSpecHash": "KO1ciBDdq0sQNIbaboOuLdvVIUBvrSJiNy/quVoHS534ohnOUQ17I/avhU8F+gBYb/y5JYoAIGg3Zzt9g5UhGA==",
   "success": true,
   "projectFilePath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Domain\\Kessewa.Quiz.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

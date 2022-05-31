@@ -15,14 +15,14 @@ namespace Kessewa.Quiz.Domain.Entities
         public Email Email { get; private set; }
         public Phone Phone { get; private set; }
         public Address Address { get; private set; }
-        public byte[] Password { get; private set; }
-        public byte[] PasswordKey { get; private set; }
+        //public byte[] Password { get; private set; }
+        //public byte[] PasswordKey { get; private set; }
 
 
-        private readonly HashSet<Lecturers> _lecturers = new HashSet<Lecturers>();
-        public IEnumerable<Lecturers> Lecturers => _lecturers.ToList().AsReadOnly();
-        private readonly HashSet<Students> _students = new HashSet<Students>();
-        public IEnumerable<Students> Students => _students.ToList().AsReadOnly();
+        private readonly List<Lecturers> _lecturers = new List<Lecturers>();
+        public IEnumerable<Lecturers> Lecturers => _lecturers.AsReadOnly();
+        private readonly List<Students> _students = new List<Students>();
+        public IEnumerable<Students> Students => _students.AsReadOnly();
 
         
         
@@ -39,6 +39,11 @@ namespace Kessewa.Quiz.Domain.Entities
             return new Users(firstName, lastName);
         }
 
+        public Users SetId(int id)
+        {
+            Id = id;
+            return this;
+        }
         public Users WithFirstName(string firstName)
         {
             FirstName = firstName;
@@ -63,17 +68,17 @@ namespace Kessewa.Quiz.Domain.Entities
             return this;
         }
 
-        public Users WithPassword(byte[] password)
-        {
-            Password = password;
-            return this;
-        }
+        //public Users WithPassword(byte[] password)
+        //{
+        //    Password = password;
+        //    return this;
+        //}
 
-        public Users WithPasswordKey(byte[] passwordKey)
-        {
-            PasswordKey = passwordKey;
-            return this;
-        }
+        //public Users WithPasswordKey(byte[] passwordKey)
+        //{
+        //    PasswordKey = passwordKey;
+        //    return this;
+        //}
 
         public Users OfType(UserType type)
         {

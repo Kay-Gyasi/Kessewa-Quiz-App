@@ -21,6 +21,12 @@ namespace Kessewa.Quiz.Domain.Entities
             return new Faculties(name);
         }
 
+        public Faculties SetId(int id)
+        {
+            Id = id;
+            return this;
+        }
+
         public Faculties WithName(string name)
         {
             Name = name;
