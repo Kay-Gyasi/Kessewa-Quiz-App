@@ -4,12 +4,12 @@
     "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Processors\\Kessewa.Quiz.Processors.csproj": {}
   },
   "projects": {
-    "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.csproj": {
+    "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.csproj",
-        "projectName": "Kessewa.Application.Shared",
-        "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj",
+        "projectName": "Kessewa.Application.Shared.Domain",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj",
         "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\obj\\",
         "projectStyle": "PackageReference",
@@ -152,8 +152,8 @@
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
             "projectReferences": {
-              "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.csproj": {
-                "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.csproj"
+              "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj": {
+                "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj"
               },
               "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Domain\\Kessewa.Quiz.Domain.csproj": {
                 "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Domain\\Kessewa.Quiz.Domain.csproj"
@@ -170,6 +170,16 @@
       "frameworks": {
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

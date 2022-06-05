@@ -14,7 +14,6 @@ namespace Kessewa.Quiz.Persistence.Configurations
         public override void Configure(EntityTypeBuilder<Students> builder)
         {
             builder.Property(x => x.UserId).IsRequired();
-            builder.Property(x => x.DepartmentId).IsRequired();
             builder.Property(x => x.Level).IsRequired();
             builder.Property(x => x.Level).HasConversion(new EnumToStringConverter<LevelType>());
 

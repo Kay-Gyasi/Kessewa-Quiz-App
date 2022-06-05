@@ -39,16 +39,12 @@ namespace Kessewa.Quiz.Persistence.Configurations
             //builder.HasData(
             //        Users.Create("Kofi", "Gyasi")
             //            .OfType(UserType.Student)
-            //            .WithPhone(Phone.Create("0781234567"))
-            //            .WithEmail(Email.Create("kaygyasi715@gmail.com"))
             //            .WithDisplayName("Kay Gyasi")
-            //            .SetId(1),
+            //            .SetId(2),
             //        Users.Create("Nana", "Asomdwee")
             //            .OfType(UserType.Lecturer)
-            //            .WithPhone(Phone.Create("0557833216"))
-            //            .WithEmail(Email.Create("nanaasomdwee@gmail.com"))
             //            .WithDisplayName("Nana Ama")
-            //            .SetId(2)
+            //            .SetId(3)
             //    );
             base.Configure(builder);
         }

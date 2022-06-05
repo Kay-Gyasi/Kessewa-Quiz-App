@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace Kessewa.Application.Shared.Models
+namespace Kessewa.Application.Shared.Domain.Models
 {
 	public class PaginatedCommand
 	{
@@ -26,13 +24,13 @@ namespace Kessewa.Application.Shared.Models
 
 		[JsonProperty("start")]
 		public int Take { get; set; } = 0;
-		public string OrderBy { get; set; }
+		public string? OrderBy { get; set; }
 		public int Skip { get; set; }
 
-		public string Filter { get; set; }
+		public string? Filter { get; set; }
 
-		public string Search { get; set; }
-		public string OtherJson { get; set; }
+		public string? Search { get; set; }
+		public string? OtherJson { get; set; }
 
 	}
 	public class PaginatedQuery

@@ -2,12 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kessewa.Application.Shared\Kessewa.Application.Shared.csproj" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kessewa.Application.Shared\Kessewa.Application.Shared.Domain.csproj" />
     <ProjectReference Include="..\Kessewa.Quiz.Domain\Kessewa.Quiz.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ExceptionHandlers\" />
   </ItemGroup>
 
 </Project>

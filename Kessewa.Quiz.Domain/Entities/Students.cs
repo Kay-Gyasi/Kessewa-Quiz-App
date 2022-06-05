@@ -6,17 +6,14 @@ namespace Kessewa.Quiz.Domain.Entities
     public class Students : EntityBase
     {
         public int UserId { get; private set; }
-        public int DepartmentId { get; private set; }
         public LevelType Level { get; private set; }
         public Users User { get; private set; }
-        public Departments Department { get; private set; }
         
         private Students() { }
 
         private Students(int userId, int departmentId)
         {
             UserId = userId;
-            DepartmentId = departmentId;
         }
 
         public static Students Create(int userId, int departmentId)
@@ -36,12 +33,6 @@ namespace Kessewa.Quiz.Domain.Entities
             return this;
         }
 
-        public Students WithDepartmentId(int departmentId)
-        {
-            DepartmentId = departmentId;
-            return this;
-        }
-
         public Students AtLevel(LevelType level)
         {
             Level = level;
@@ -51,12 +42,6 @@ namespace Kessewa.Quiz.Domain.Entities
         public Students ForUser(Users user)
         {
             User = user;
-            return this;
-        }
-
-        public Students ForDepartment(Departments department)
-        {
-            Department = department;
             return this;
         }
     }

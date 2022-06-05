@@ -5,32 +5,32 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Kessewa.Application.Shared.Models;
+using Kessewa.Application.Shared.Domain.Models;
+using Kessewa.Application.Shared.Persistence;
 using Kessewa.Quiz.Domain.ViewModels;
 using Kessewa.Quiz.Persistence.DatabaseContext;
 using Kessewa.Quiz.Processors.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Kessewa.Quiz.Persistence.Repositories.Base
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
         private DbSet<T> _entities;
-        protected readonly KessewaDbContext Context;
+        private readonly KessewaDbContext _context;
+        private readonly ILogger<T> _logger;
+        private const double Tolerance = 0.5;
 
-        public RepositoryBase(KessewaDbContext context)
+        public RepositoryBase(KessewaDbContext context, ILogger<T> logger)
         {
-            Context = context;
+            _context = context;
+            _logger = logger;
         }
 
-        public virtual DbSet<T> Entities
+        protected virtual DbSet<T> Entities
         {
-            get
-            {
-                if (_entities == null)
-                    _entities = Context.Set<T>();
-                return _entities;
-            }
+            get { return _entities ??= _context.Set<T>(); }
         }
 
         public virtual IQueryable<T> Table => Entities;
@@ -39,7 +39,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
         public async Task<T> GetAsync(int id)
         {
             if (id <= 0) return null;
-            var keyProperty = Context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];
+            var keyProperty = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];
             return await GetBaseQuery().FirstOrDefaultAsync(e => EF.Property<int>(e, keyProperty.Name) == id);
         }
 
@@ -63,51 +63,51 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             return await GetBaseQuery().Where(predicate).ToListAsync(cancellationToken);
         }
 
-        //public async Task<PaginatedList<T>> GetPage(PaginatedCommand paginated, CancellationToken cancellationToken)
-        //{
+        // TODO:: Confirm method works
+        public async Task<PaginatedList<T>> GetPage(PaginatedCommand paginated, CancellationToken cancellationToken)
+        {
+            if (string.IsNullOrEmpty(paginated.Search)) return await KeySetPaginate(paginated, null, cancellationToken);
+            var search = paginated.Search.ToLower();
+            var predicate = PredicateBuilder.True<T>();
+            foreach (var property in typeof(T).GetProperties())
+            {
+                if (property.PropertyType == typeof(string))
+                {
+                    predicate = predicate.Or(e => EF.Property<string>(e, property.Name).ToLower().Contains(search));
+                }
 
+                if (property.PropertyType == typeof(int))
+                {
+                    predicate = predicate.Or(e => EF.Property<int>(e, property.Name) == int.Parse(search));
+                }
 
-        //    var whereQueryable = GetBaseQuery()
-        //        .WhereIf(!string.IsNullOrEmpty(paginated.Search), GetSearchCondition(paginated.Search));
+                if (property.PropertyType == typeof(bool))
+                {
+                    predicate = predicate.Or(e => EF.Property<bool>(e, property.Name) == bool.Parse(search));
+                }
 
-        //    var pagedModel = await whereQueryable.PageBy(x => paginated.Take, paginated)
-        //        .ToListAsync(cancellationToken);
+                if (property.PropertyType == typeof(DateTime))
+                {
+                    predicate = predicate.Or(e => EF.Property<DateTime>(e, property.Name) == DateTime.Parse(search));
+                }
 
-        //    var totalRecords = await whereQueryable.CountAsync(cancellationToken: cancellationToken);
+                if (property.PropertyType == typeof(decimal))
+                {
+                    predicate = predicate.Or(e => EF.Property<decimal>(e, property.Name) == decimal.Parse(search));
+                }
 
+                if (property.PropertyType == typeof(double))
+                {
+                    predicate = predicate.Or(e => Math.Abs(EF.Property<double>(e, property.Name) - double.Parse(search)) < Tolerance);
+                }
 
-        //    return new PaginatedList<T>(data: pagedModel,
-        //        totalCount: totalRecords,
-        //        currentPage: paginated.PageNumber,
-        //        pageSize: paginated.PageSize);
-        //}
+                    
+            }
 
-        //public async Task<PaginatedList<T>> GetPage(PaginatedCommand paginated, IQueryable<T> query, CancellationToken cancellationToken)
-        //{
-        //    try
-        //    {
+            return await KeySetPaginate(paginated, predicate, cancellationToken);
 
-        //        var whereQuerable = query
-        //            .WhereIf(!string.IsNullOrEmpty(paginated.Search), GetSearchCondition(paginated.Search));
+        }
 
-        //        var pagedModel = await whereQuerable.PageBy(x => paginated.Take, paginated)
-        //            .ToListAsync(cancellationToken);
-
-        //        var totalRecords = await whereQuerable.CountAsync(cancellationToken: cancellationToken);
-
-
-        //        return new PaginatedList<T>(data: pagedModel,
-        //            totalCount: totalRecords,
-        //            currentPage: paginated.PageNumber,
-        //            pageSize: paginated.PageSize);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        throw ex;
-        //    }
-
-        //}        
 
         public async Task InsertAsync(T entity, bool autoCommit = true)
         {
@@ -118,10 +118,14 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
 
                 await Entities.AddAsync(entity);
                 if (autoCommit)
-                    await Context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
 
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
         }
 
         public async Task InsertAsync(IEnumerable<T> entities, bool autoCommit = true)
@@ -134,9 +138,13 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
                 foreach (var entity in entities)
                     await Entities.AddAsync(entity);
                 if (autoCommit)
-                    await Context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
         }
         public async Task InsertAsync(IEnumerable<T> entities, CancellationToken cancellationToken, bool autoCommit = true)
         {
@@ -147,9 +155,13 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
 
                 await Entities.AddRangeAsync(entities, cancellationToken);
                 if (autoCommit)
-                    await Context.SaveChangesAsync();
+                    await _context.SaveChangesAsync(cancellationToken);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
         }
 
         public async Task UpdateAsync(T entity, bool autoCommit = true)
@@ -161,9 +173,13 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
 
                 Entities.Update(entity);
                 if (autoCommit)
-                    await Context.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
         }
 
         public async Task DeleteAsync(T entity, CancellationToken cancellationToken, bool autoCommit = true)
@@ -175,9 +191,13 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
 
                 Entities.Remove(entity);
                 if (autoCommit)
-                    await Context.SaveChangesAsync(cancellationToken);
+                    await _context.SaveChangesAsync(cancellationToken);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
         }
 
         public async Task DeleteAsync(int id, CancellationToken cancellationToken, bool autoCommit = true)
@@ -187,16 +207,21 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
                 if (id <= 0)
                     throw new ArgumentNullException("id");
 
-                var keyProperty = Context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];
-                var entity = await GetBaseQuery().FirstOrDefaultAsync(e => EF.Property<int>(e, keyProperty.Name) == id, cancellationToken);
+                var keyProperty = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];
+                var entity = await GetBaseQuery()
+                    .FirstOrDefaultAsync(e => EF.Property<int>(e, keyProperty.Name) == id, cancellationToken);
                 if (entity == null)
                     throw new ArgumentNullException("entity");
 
                 Entities.Remove(entity);
                 if (autoCommit)
-                    await Context.SaveChangesAsync(cancellationToken);
+                    await _context.SaveChangesAsync(cancellationToken);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
         }
 
         //public Task SoftDeleteAsync(T entity, bool autoCommit = true)
@@ -214,30 +239,63 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
                 Entities.RemoveRange(entities);
                 if (autoCommit)
 
-                    await Context.SaveChangesAsync(cancellationToken);
+                    await _context.SaveChangesAsync(cancellationToken);
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
         }      
         
         public async Task CommitAsync()
         {
-            await Context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task CommitAsync(CancellationToken cancellationToken)
         {
-            await Context.SaveChangesAsync(cancellationToken);
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
         public async Task<int> CountAsync()
         {
-            return await Context.Set<T>().CountAsync();
+            return await _context.Set<T>().CountAsync();
         }
 
         public virtual async Task<List<Lookup>> GetLookupAsync()
         {
 
             return new List<Lookup>();
+        }
+
+
+
+
+
+        private async Task<PaginatedList<T>> KeySetPaginate(PaginatedCommand command, Expression<Func<T, bool>> predicate, CancellationToken token)
+        {
+            var keyProperty = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];
+            predicate ??= e => true;
+            predicate = predicate.And(e =>
+                EF.Property<int>(e, keyProperty.Name) > (command.PageNumber * command.PageSize));
+
+            try
+            {
+                // TODO:: Work on ordering by different criteria
+                var query = GetBaseQuery()
+                    .Where(predicate)
+                    .OrderBy(x => EF.Property<int>(x, keyProperty.Name))
+                    .ThenBy(x => EF.Property<int>(x, "DateCreated"));
+                var totalCount = await query.CountAsync(token);
+                var items = await query.Take(command.PageSize).ToListAsync(token);
+                return new PaginatedList<T>(items, totalCount, command.PageNumber, command.PageSize);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                throw;
+            }
         }
 
     }

@@ -5,6 +5,9 @@ namespace Kessewa.Quiz.Domain.ValueObjects
 {
     public class Question : ValueObject
     {
+        public string QuestionText { get; private set; }
+        public string Answer { get; private set; }
+        
         private Question() { }
 
         public static Question Create()
@@ -24,8 +27,7 @@ namespace Kessewa.Quiz.Domain.ValueObjects
             return this;
         }
         
-        public string QuestionText { get; private set; }
-        public string Answer { get; private set; }
+        
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return QuestionText;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Kessewa.Quiz.Domain.Entities;
+using Kessewa.Quiz.Domain.ValueObjects;
 using Kessewa.Quiz.Persistence.Configurations.Base;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -23,11 +24,13 @@ namespace Kessewa.Quiz.Persistence.Configurations
             });
 
 
-            //builder.HasData(
-            //    Departments.Create("Computer Science and Engineering", 1)
-            //        .SetId(1),
-            //    Departments.Create("Mineral Resources", 2)
-            //        .SetId(2));
+            builder.HasData(
+                Departments.Create("Computer Science and Engineering", 1)
+                    .SetId(1)
+                    .WithDescription(null),
+            Departments.Create("Mineral Resources", 2)
+                    .SetId(2)
+                    .WithDescription(null));
             base.Configure(builder);
         }
     }

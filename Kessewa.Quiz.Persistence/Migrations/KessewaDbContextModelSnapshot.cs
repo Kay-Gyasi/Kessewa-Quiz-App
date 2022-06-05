@@ -108,6 +108,24 @@ namespace Kessewa.Quiz.Persistence.Migrations
                     b.HasIndex("FacultyId");
 
                     b.ToTable("Departments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateModified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FacultyId = 1,
+                            Name = "Computer Science and Engineering"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateModified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FacultyId = 2,
+                            Name = "Mineral Resources"
+                        });
                 });
 
             modelBuilder.Entity("Kessewa.Quiz.Domain.Entities.Faculties", b =>
@@ -172,9 +190,6 @@ namespace Kessewa.Quiz.Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.Property<int?>("DepartmentsId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -184,21 +199,9 @@ namespace Kessewa.Quiz.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentsId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Lecturers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateModified = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Type = "SeniorLecturer",
-                            UserId = 2
-                        });
                 });
 
             modelBuilder.Entity("Kessewa.Quiz.Domain.Entities.Questions", b =>
@@ -288,9 +291,6 @@ namespace Kessewa.Quiz.Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.Property<int>("DepartmentId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Level")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -299,8 +299,6 @@ namespace Kessewa.Quiz.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DepartmentId");
 
                     b.HasIndex("UserId");
 
@@ -359,6 +357,12 @@ namespace Kessewa.Quiz.Persistence.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("DepartmentsId")
+                        .HasColumnType("int");
+
                     b.Property<string>("DisplayName")
                         .HasColumnType("nvarchar(max)");
 
@@ -375,6 +379,8 @@ namespace Kessewa.Quiz.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("DepartmentsId");
 
                     b.ToTable("Users");
                 });
@@ -460,10 +466,6 @@ namespace Kessewa.Quiz.Persistence.Migrations
 
             modelBuilder.Entity("Kessewa.Quiz.Domain.Entities.Lecturers", b =>
                 {
-                    b.HasOne("Kessewa.Quiz.Domain.Entities.Departments", null)
-                        .WithMany("Lecturers")
-                        .HasForeignKey("DepartmentsId");
-
                     b.HasOne("Kessewa.Quiz.Domain.Entities.Users", "User")
                         .WithMany("Lecturers")
                         .HasForeignKey("UserId")
@@ -549,19 +551,11 @@ namespace Kessewa.Quiz.Persistence.Migrations
 
             modelBuilder.Entity("Kessewa.Quiz.Domain.Entities.Students", b =>
                 {
-                    b.HasOne("Kessewa.Quiz.Domain.Entities.Departments", "Department")
-                        .WithMany("Students")
-                        .HasForeignKey("DepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Kessewa.Quiz.Domain.Entities.Users", "User")
                         .WithMany("Students")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Department");
 
                     b.Navigation("User");
                 });
@@ -614,6 +608,10 @@ namespace Kessewa.Quiz.Persistence.Migrations
 
             modelBuilder.Entity("Kessewa.Quiz.Domain.Entities.Users", b =>
                 {
+                    b.HasOne("Kessewa.Quiz.Domain.Entities.Departments", null)
+                        .WithMany("Users")
+                        .HasForeignKey("DepartmentsId");
+
                     b.OwnsOne("Kessewa.Quiz.Domain.ValueObjects.Address", "Address", b1 =>
                         {
                             b1.Property<int>("UsersId")
@@ -687,9 +685,7 @@ namespace Kessewa.Quiz.Persistence.Migrations
 
             modelBuilder.Entity("Kessewa.Quiz.Domain.Entities.Departments", b =>
                 {
-                    b.Navigation("Lecturers");
-
-                    b.Navigation("Students");
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Kessewa.Quiz.Domain.Entities.Lecturers", b =>

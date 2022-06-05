@@ -8,6 +8,7 @@ namespace Kessewa.Quiz.Domain.Entities
 {
     public class Users : EntityBase
     {
+        public int DepartmentId { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
         public string DisplayName { get; private set; }

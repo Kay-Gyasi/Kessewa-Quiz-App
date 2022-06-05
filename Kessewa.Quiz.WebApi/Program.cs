@@ -23,7 +23,6 @@ try
     builder.Logging.AddSerilog(logger);
 
 
-    Log.Information("Application starting up");
     app = builder.Build();
 }
 catch (Exception e)

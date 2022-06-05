@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Kessewa.Application.Shared.Models;
+using Kessewa.Application.Shared.Domain.Models;
 using Kessewa.Quiz.Domain.ViewModels;
 
 namespace Kessewa.Quiz.Processors.Repositories.Base
@@ -18,12 +18,13 @@ namespace Kessewa.Quiz.Processors.Repositories.Base
 		Task CommitAsync(CancellationToken cancellationToken);
 		Task DeleteAsync(T entity, CancellationToken cancellationToken, bool autoCommit = true);
 		Task DeleteAsync(IEnumerable<T> entities, CancellationToken cancellationToken, bool autoCommit = true);
+		Task DeleteAsync(int id, CancellationToken cancellationToken, bool autoCommit = true);
 		Task<T> GetAsync(int id);
 		Task<List<T>> GetAllAsync();
 		Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate);
 		Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken);
 		// Task<PaginatedList<T>> GetPage(PaginatedCommand paginated, CancellationToken cancellationToken);
-		// Task<PaginatedList<T>> GetPage(PaginatedCommand paginated, IQueryable<T> query, CancellationToken cancellationToken);
+		Task<PaginatedList<T>> GetPage(PaginatedCommand paginated, CancellationToken cancellationToken);
 		Task<List<Lookup>> GetLookupAsync();
 		Task InsertAsync(IEnumerable<T> entities, CancellationToken cancellationToken, bool autoCommit = true);
 		Task InsertAsync(IEnumerable<T> entities, bool autoCommit = true);

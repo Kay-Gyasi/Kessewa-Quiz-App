@@ -18,9 +18,9 @@ namespace Kessewa.Quiz.Persistence.Configurations
             builder.Property(x => x.Type).HasConversion(new EnumToStringConverter<LecturerType>());
 
 
-            builder.HasData(
-                Lecturers.Create(2, LecturerType.SeniorLecturer)
-                    .SetId(1));
+            //builder.HasData(
+            //    Lecturers.Create(2, LecturerType.SeniorLecturer).SetId(1),
+            //    Lecturers.Create(1, LecturerType.Lecturer).SetId(2));
             base.Configure(builder);
         }
     }

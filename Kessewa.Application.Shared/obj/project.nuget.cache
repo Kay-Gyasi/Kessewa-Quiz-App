@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "19IXgKEaZ4WHKKuXUK3iq6ORIS0L4pSb3GmdQ3t57Yd7JFvmdMxNfW3liObbzQkAjsW9nRmXqpYmpXRKxFx54Q==",
+  "dgSpecHash": "GmwX7/ZSCpdVVu32HghUYpPPWvSii6HkO2bb+PHOJlZ0Xb6FyJmwLadS38VgURpNTup4cewlUA4xh9dAaZdvFw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.csproj",
+  "projectFilePath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.http\\2.2.2\\microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",

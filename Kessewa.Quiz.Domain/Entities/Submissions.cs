@@ -13,7 +13,7 @@ namespace Kessewa.Quiz.Domain.Entities
         public DateTime TimeSubmitted { get; private set; }
         public Quizzes Quiz { get; private set; }
         public Students Student { get; private set; }
-        public List<Choices> Choices { get; private set; } = new List<Choices>();
+        public List<Choices> Choices { get; private set; }
 
         private Submissions() { }
 

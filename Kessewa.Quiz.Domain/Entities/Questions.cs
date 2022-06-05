@@ -11,7 +11,7 @@ namespace Kessewa.Quiz.Domain.Entities
         public double MarksAllocated { get; private set; }
         public Question Question { get; private set; }
         public Quizzes Quiz { get; private set; }
-        public List<Answer> Options { get; private set; } = new List<Answer>();        
+        public List<Answer> Options { get; private set; }        
         
         private Questions() { }
 

@@ -1,0 +1,16 @@
+{
+  "Timestamp": "2022-06-05T02:11:25.4760502+00:00",
+  "Level": "Information",
+  "MessageTemplate": "Controller has been fired!",
+  "Properties": {
+    "SourceContext": "Kessewa.Quiz.WebApi.Controllers.WeatherForecastController",
+    "ActionId": "a8ba1764-2aff-4cf3-87a2-a50e931b44c7",
+    "ActionName": "Kessewa.Quiz.WebApi.Controllers.WeatherForecastController.Get (Kessewa.Quiz.WebApi)",
+    "RequestId": "0HMI6J2MEDV5B:00000009",
+    "RequestPath": "/WeatherForecast",
+    "ConnectionId": "0HMI6J2MEDV5B",
+    "MachineName": "YOGA-X1",
+    "ProcessId": 5088,
+    "ThreadId": 9
+  }
+}

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Kessewa.Application.Shared
+﻿namespace Kessewa.Application.Shared.Domain
 {
     public class Class1
     {

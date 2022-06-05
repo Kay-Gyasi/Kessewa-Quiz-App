@@ -17,12 +17,11 @@ namespace Kessewa.Quiz.Domain.Entities
         public Faculties Faculty { get; private set; }
 
 
-        private readonly List<Lecturers> lecturers = new List<Lecturers>();
-        public IReadOnlyList<Lecturers> Lecturers => lecturers.AsReadOnly();
-        private readonly List<Students> students = new List<Students>();
-        public IReadOnlyList<Students> Students => students.AsReadOnly();
-        private readonly List<Courses> courses = new List<Courses>();
-        public IReadOnlyList<Courses> Courses => courses.AsReadOnly();        
+        
+        private readonly List<Users> _users = new List<Users>();
+        public IReadOnlyList<Users> Users => _users.AsReadOnly();
+        private readonly List<Courses> _courses = new List<Courses>();
+        public IReadOnlyList<Courses> Courses => _courses.AsReadOnly();        
 
         
         private Departments() { }

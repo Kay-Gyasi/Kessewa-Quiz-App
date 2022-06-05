@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Kessewa.Application.Shared.Persistence\Kessewa.Application.Shared.Persistence.csproj" />
     <ProjectReference Include="..\Kessewa.Quiz.Domain\Kessewa.Quiz.Domain.csproj" />
     <ProjectReference Include="..\Kessewa.Quiz.Processors\Kessewa.Quiz.Processors.csproj" />
   </ItemGroup>

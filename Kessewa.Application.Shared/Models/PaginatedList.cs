@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Kessewa.Application.Shared.Models
+namespace Kessewa.Application.Shared.Domain.Models
 {
     public class PaginatedList<T>
     {
