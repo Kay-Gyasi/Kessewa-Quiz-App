@@ -1,7 +1,7 @@
-﻿using AutoMapper;
+﻿using System.Reflection;
+using AutoMapper;
 using Kessewa.Quiz.Persistence;
 using Kessewa.Quiz.Processors;
-using Kessewa.Quiz.WebApi.Mapping;
 
 namespace Kessewa.Quiz.WebApi
 {
@@ -12,19 +12,7 @@ namespace Kessewa.Quiz.WebApi
             services.AddPersistence(configuration)
                 .AddRepositories()
                 .AddProcessors()
-                .AddAutoMapper();
-            return services;
-        }
-
-        private static IServiceCollection AddAutoMapper(this IServiceCollection services)
-        {
-            var mapperConfig = new MapperConfiguration(x =>
-            {
-                x.AddProfile(new MappingProfile());
-            });
-
-            var mapper = mapperConfig.CreateMapper();
-            services.AddSingleton(mapper);
+                .RegisterAutoMapper();
             return services;
         }
     }

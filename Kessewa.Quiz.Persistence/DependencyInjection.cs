@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 using Kessewa.Quiz.Persistence.DatabaseContext;
 using Kessewa.Quiz.Persistence.Repositories;
+using Kessewa.Quiz.Processors.ExceptionHandlers;
 using Kessewa.Quiz.Processors.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,17 +24,28 @@ namespace Kessewa.Quiz.Persistence
             return services;
         }
 
+        /// <summary>
+        ///    Registers all repositories in the assembly.
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
+        /// <exception cref="RepositoryNotRegisteredException"></exception>
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
-            services.AddScoped<ICourseRepository, CourseRepository>();
-            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
-            services.AddScoped<IFacultyRepository, FacultyRepository>();
-            services.AddScoped<ILecturerRepository, LecturerRepository>();
-            services.AddScoped<IQuestionRepository, QuestionRepository>();
-            services.AddScoped<IQuizRepository, QuizRepository>();
-            services.AddScoped<IStudentRepository, StudentRepository>();
-            services.AddScoped<ISubmissionRepository, SubmissionRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
+            var definedTypes = typeof(DependencyInjection).Assembly.DefinedTypes;
+            var repositories = definedTypes
+                .Where(t => t.IsClass && t.GetCustomAttribute<RepositoryAttribute>() != null)
+                .ToList();
+
+            foreach (var repository in repositories)
+            {
+                services.AddScoped(
+                    repository.GetInterfaces()
+                        .SingleOrDefault(x => x.GetCustomAttribute<RepositoryAttribute>() != null) ??
+                    throw new RepositoryNotRegisteredException("Missing [Repository] tag on repository interface"),
+                    repository);
+            }
+
             return services;
         }
     }

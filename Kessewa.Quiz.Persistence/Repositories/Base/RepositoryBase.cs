@@ -9,6 +9,7 @@ using Kessewa.Application.Shared.Domain.Models;
 using Kessewa.Application.Shared.Persistence;
 using Kessewa.Quiz.Domain.ViewModels;
 using Kessewa.Quiz.Persistence.DatabaseContext;
+using Kessewa.Quiz.Processors.ExceptionHandlers;
 using Kessewa.Quiz.Processors.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
@@ -22,7 +23,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
         private readonly ILogger<T> _logger;
         private const double Tolerance = 0.5;
 
-        public RepositoryBase(KessewaDbContext context, ILogger<T> logger)
+        protected RepositoryBase(KessewaDbContext context, ILogger<T> logger)
         {
             _context = context;
             _logger = logger;
@@ -38,7 +39,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
 
         public async Task<T> GetAsync(int id)
         {
-            if (id <= 0) return null;
+            if (id <= 0) throw new InvalidIdException($"{nameof(id)} cannot be less than or equal to 0");
             var keyProperty = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];
             return await GetBaseQuery().FirstOrDefaultAsync(e => EF.Property<int>(e, keyProperty.Name) == id);
         }
@@ -114,7 +115,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             try
             {
                 if (entity == null)
-                    throw new ArgumentNullException("entity");
+                    throw new InvalidEntityException($"{nameof(entity)} cannot be null");
 
                 await Entities.AddAsync(entity);
                 if (autoCommit)
@@ -133,7 +134,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             try
             {
                 if (entities == null)
-                    throw new ArgumentNullException("entities");
+                    throw new InvalidEntityException($"{nameof(entities)} cannot be null");
 
                 foreach (var entity in entities)
                     await Entities.AddAsync(entity);
@@ -151,7 +152,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             try
             {
                 if (entities == null)
-                    throw new ArgumentNullException("entities");
+                    throw new InvalidEntityException($"{nameof(entities)} cannot be null");
 
                 await Entities.AddRangeAsync(entities, cancellationToken);
                 if (autoCommit)
@@ -169,7 +170,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             try
             {
                 if (entity == null)
-                    throw new ArgumentNullException("entity");
+                    throw new InvalidEntityException($"{nameof(entity)} cannot be null");
 
                 Entities.Update(entity);
                 if (autoCommit)
@@ -187,7 +188,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             try
             {
                 if (entity == null)
-                    throw new ArgumentNullException("entity");
+                    throw new InvalidEntityException($"{nameof(entity)} cannot be null");
 
                 Entities.Remove(entity);
                 if (autoCommit)
@@ -205,13 +206,13 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             try
             {
                 if (id <= 0)
-                    throw new ArgumentNullException("id");
+                    throw new InvalidIdException($"{nameof(id)} cannot be less than or equal to 0");
 
                 var keyProperty = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];
                 var entity = await GetBaseQuery()
                     .FirstOrDefaultAsync(e => EF.Property<int>(e, keyProperty.Name) == id, cancellationToken);
                 if (entity == null)
-                    throw new ArgumentNullException("entity");
+                    throw new InvalidEntityException($"{nameof(entity)} cannot be null");
 
                 Entities.Remove(entity);
                 if (autoCommit)
@@ -234,7 +235,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             try
             {
                 if (entities == null)
-                    throw new ArgumentNullException("entities");
+                    throw new InvalidEntityException($"{nameof(entities)} cannot be null");
 
                 Entities.RemoveRange(entities);
                 if (autoCommit)

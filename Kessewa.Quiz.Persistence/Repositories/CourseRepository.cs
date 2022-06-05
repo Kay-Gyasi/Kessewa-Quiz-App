@@ -13,6 +13,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Kessewa.Quiz.Persistence.Repositories
 {
+    [Repository]
     public class CourseRepository : RepositoryBase<Courses>, ICourseRepository
     {
         public CourseRepository(KessewaDbContext context, ILogger<Courses> logger) : base(context, logger)

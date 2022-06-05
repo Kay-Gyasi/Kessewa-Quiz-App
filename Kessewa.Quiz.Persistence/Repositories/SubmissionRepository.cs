@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Kessewa.Quiz.Persistence.Repositories
 {
+    [Repository]
     public class SubmissionRepository : RepositoryBase<Submissions>, ISubmissionRepository
     {
         public SubmissionRepository(KessewaDbContext context, ILogger<Submissions> logger) : base(context, logger)

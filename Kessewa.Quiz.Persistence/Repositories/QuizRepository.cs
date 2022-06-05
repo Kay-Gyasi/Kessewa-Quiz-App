@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Kessewa.Quiz.Persistence.Repositories
 {
+    [Repository]
     public class QuizRepository : RepositoryBase<Quizzes>, IQuizRepository
     {
         public QuizRepository(KessewaDbContext context, ILogger<Quizzes> logger) : base(context, logger)

@@ -38,6 +38,7 @@ namespace Kessewa.Quiz.Persistence.DatabaseContext
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //modelBuilder.UserConfig();
+            //modelBuilder.ApplyConfigurationsFromAssembly();
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new CourseConfiguratioon());
             modelBuilder.ApplyConfiguration(new DepartmentConfiguration());

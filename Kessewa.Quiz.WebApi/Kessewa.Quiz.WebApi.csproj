@@ -21,8 +21,4 @@
     <ProjectReference Include="..\Kessewa.Quiz.Persistence\Kessewa.Quiz.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-  </ItemGroup>
-
 </Project>

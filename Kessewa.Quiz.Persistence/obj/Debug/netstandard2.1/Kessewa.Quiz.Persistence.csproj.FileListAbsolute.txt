@@ -1,8 +1,3 @@
-C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.csproj.AssemblyReference.cache
-C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.AssemblyInfoInputs.cache
-C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.AssemblyInfo.cs
-C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\bin\Debug\netstandard2.1\Kessewa.Quiz.Persistence.deps.json
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\bin\Debug\netstandard2.1\Kessewa.Quiz.Persistence.dll
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\bin\Debug\netstandard2.1\Kessewa.Quiz.Persistence.pdb
@@ -14,6 +9,11 @@ C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\bin\Debug\
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\bin\Debug\netstandard2.1\Kessewa.Quiz.Domain.pdb
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\bin\Debug\netstandard2.1\Kessewa.Quiz.Processors.pdb
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\bin\Debug\netstandard2.1\Kessewa.Application.Shared.Domain.pdb
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.csproj.AssemblyReference.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.AssemblyInfoInputs.cache
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.AssemblyInfo.cs
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.csproj.CoreCompileInputs.cache
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.csproj.CopyComplete
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.dll
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.Persistence\obj\Debug\netstandard2.1\Kessewa.Quiz.Persistence.pdb

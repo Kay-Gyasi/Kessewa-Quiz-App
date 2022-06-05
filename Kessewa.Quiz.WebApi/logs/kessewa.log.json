@@ -13,7 +13,7 @@
     "ProcessId": 5088,
     "ThreadId": 9
   }
-},
+}
 {
   
   "Timestamp": "2022-06-05T02:16:44.3260682+00:00",
@@ -29,5 +29,39 @@
     "MachineName": "YOGA-X1",
     "ProcessId": 27760,
     "ThreadId": 16
+  }
+}
+{
+  
+  "Timestamp": "2022-06-05T13:00:35.2631136+00:00",
+  "Level": "Information",
+  "MessageTemplate": "Controller has been fired!",
+  "Properties": {
+    "SourceContext": "Kessewa.Quiz.WebApi.Controllers.WeatherForecastController",
+    "ActionId": "214e0046-3e1b-401b-9ddf-7fedbe7ae6bd",
+    "ActionName": "Kessewa.Quiz.WebApi.Controllers.WeatherForecastController.Get (Kessewa.Quiz.WebApi)",
+    "RequestId": "0HMI6UDENU4AV:00000001",
+    "RequestPath": "/WeatherForecast",
+    "ConnectionId": "0HMI6UDENU4AV",
+    "MachineName": "YOGA-X1",
+    "ProcessId": 3620,
+    "ThreadId": 12
+  }
+}
+{
+  
+  "Timestamp": "2022-06-05T13:33:38.8164893+00:00",
+  "Level": "Information",
+  "MessageTemplate": "Controller has been fired!",
+  "Properties": {
+    "SourceContext": "Kessewa.Quiz.WebApi.Controllers.WeatherForecastController",
+    "ActionId": "8a17c9ae-8213-4db9-aeec-323571f316a6",
+    "ActionName": "Kessewa.Quiz.WebApi.Controllers.WeatherForecastController.Get (Kessewa.Quiz.WebApi)",
+    "RequestId": "0HMI6UVNOOOC5:00000001",
+    "RequestPath": "/WeatherForecast",
+    "ConnectionId": "0HMI6UVNOOOC5",
+    "MachineName": "YOGA-X1",
+    "ProcessId": 3200,
+    "ThreadId": 12
   }
 }
