@@ -4,6 +4,70 @@
     "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Application\\Kessewa.Quiz.Application.csproj": {}
   },
   "projects": {
+    "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj",
+        "projectName": "Kessewa.Application.Shared.Domain",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Application\\Kessewa.Quiz.Application.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +91,150 @@
         "frameworks": {
           "netstandard2.1": {
             "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Processors\\Kessewa.Quiz.Processors.csproj": {
+                "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Processors\\Kessewa.Quiz.Processors.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Domain\\Kessewa.Quiz.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Domain\\Kessewa.Quiz.Domain.csproj",
+        "projectName": "Kessewa.Quiz.Domain",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Domain\\Kessewa.Quiz.Domain.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Processors\\Kessewa.Quiz.Processors.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Processors\\Kessewa.Quiz.Processors.csproj",
+        "projectName": "Kessewa.Quiz.Processors",
+        "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Processors\\Kessewa.Quiz.Processors.csproj",
+        "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Processors\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj": {
+                "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Application.Shared\\Kessewa.Application.Shared.Domain.csproj"
+              },
+              "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Domain\\Kessewa.Quiz.Domain.csproj": {
+                "projectPath": "C:\\Users\\admin\\source\\repos\\Kessewa Quiz App\\Kessewa.Quiz.Domain\\Kessewa.Quiz.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

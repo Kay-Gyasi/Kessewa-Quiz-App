@@ -8,6 +8,7 @@ namespace Kessewa.Application.Shared.Domain.Models
 	{
 		private int _pageSize = 10;
 		private int _pageNumber = 1;
+		private int _lastEntityId = 0;
 
 		public int PageSize
 		{
@@ -27,12 +28,21 @@ namespace Kessewa.Application.Shared.Domain.Models
 		public string? OrderBy { get; set; }
 		public int Skip { get; set; }
 
+		public int LastEntityId
+		{
+			get => _lastEntityId < 0 ? 0 : _lastEntityId;
+			set => _lastEntityId = value;
+		}
+
+		public Direction Direction { get; set; } = Direction.Forward;
 		public string? Filter { get; set; }
 
 		public string? Search { get; set; }
 		public string? OtherJson { get; set; }
 
 	}
+
+	// TODO:: Include LastId
 	public class PaginatedQuery
 	{
 		public IQueryCollection FormQuery { get; }
@@ -61,5 +71,11 @@ namespace Kessewa.Application.Shared.Domain.Models
 		public string Filter => FormQuery["filter"].ToString();
 		public string Search => FormQuery["search"].ToString().ToLower();
 
+	}
+
+	public enum Direction
+	{
+		Forward,
+		Backward
 	}
 }

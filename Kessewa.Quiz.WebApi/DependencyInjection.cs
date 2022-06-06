@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using AutoMapper;
+using Kessewa.Quiz.Application;
 using Kessewa.Quiz.Persistence;
 using Kessewa.Quiz.Processors;
 
@@ -12,7 +13,8 @@ namespace Kessewa.Quiz.WebApi
             services.AddPersistence(configuration)
                 .AddRepositories()
                 .AddProcessors()
-                .RegisterAutoMapper();
+                .RegisterAutoMapper()
+                .AddMediatr();
             return services;
         }
     }

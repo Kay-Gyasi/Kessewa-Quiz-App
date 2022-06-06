@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Kessewa.Application.Shared.Domain.Models;
 using Kessewa.Application.Shared.Persistence;
+using Kessewa.Quiz.Domain.Entities.Base;
 using Kessewa.Quiz.Domain.ViewModels;
 using Kessewa.Quiz.Persistence.DatabaseContext;
 using Kessewa.Quiz.Processors.ExceptionHandlers;
 using Kessewa.Quiz.Processors.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Logging;
 
 namespace Kessewa.Quiz.Persistence.Repositories.Base
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public class RepositoryBase<T> : IRepositoryBase<T> where T : EntityBase
     {
         private DbSet<T> _entities;
         private readonly KessewaDbContext _context;
@@ -64,49 +67,19 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             return await GetBaseQuery().Where(predicate).ToListAsync(cancellationToken);
         }
 
-        // TODO:: Confirm method works
+        // TODO:: Incorporate offset pagination
         public async Task<PaginatedList<T>> GetPage(PaginatedCommand paginated, CancellationToken cancellationToken)
         {
             if (string.IsNullOrEmpty(paginated.Search)) return await KeySetPaginate(paginated, null, cancellationToken);
-            var search = paginated.Search.ToLower();
-            var predicate = PredicateBuilder.True<T>();
-            foreach (var property in typeof(T).GetProperties())
-            {
-                if (property.PropertyType == typeof(string))
-                {
-                    predicate = predicate.Or(e => EF.Property<string>(e, property.Name).ToLower().Contains(search));
-                }
-
-                if (property.PropertyType == typeof(int))
-                {
-                    predicate = predicate.Or(e => EF.Property<int>(e, property.Name) == int.Parse(search));
-                }
-
-                if (property.PropertyType == typeof(bool))
-                {
-                    predicate = predicate.Or(e => EF.Property<bool>(e, property.Name) == bool.Parse(search));
-                }
-
-                if (property.PropertyType == typeof(DateTime))
-                {
-                    predicate = predicate.Or(e => EF.Property<DateTime>(e, property.Name) == DateTime.Parse(search));
-                }
-
-                if (property.PropertyType == typeof(decimal))
-                {
-                    predicate = predicate.Or(e => EF.Property<decimal>(e, property.Name) == decimal.Parse(search));
-                }
-
-                if (property.PropertyType == typeof(double))
-                {
-                    predicate = predicate.Or(e => Math.Abs(EF.Property<double>(e, property.Name) - double.Parse(search)) < Tolerance);
-                }
-
-                    
-            }
+            var predicate = GetSearchCondition(paginated.Search.ToLower());
 
             return await KeySetPaginate(paginated, predicate, cancellationToken);
 
+        }
+
+        public virtual Expression<Func<T, bool>> GetSearchCondition(string search)
+        {
+            return x => x.DateCreated.ToString().Contains(search);
         }
 
 
@@ -277,26 +250,66 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
         private async Task<PaginatedList<T>> KeySetPaginate(PaginatedCommand command, Expression<Func<T, bool>> predicate, CancellationToken token)
         {
             var keyProperty = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];
-            predicate ??= e => true;
-            predicate = predicate.And(e =>
-                EF.Property<int>(e, keyProperty.Name) > (command.PageNumber * command.PageSize));
+            predicate = BuildPredicate(command, predicate, keyProperty);
 
             try
             {
-                // TODO:: Work on ordering by different criteria
-                var query = GetBaseQuery()
-                    .Where(predicate)
-                    .OrderBy(x => EF.Property<int>(x, keyProperty.Name))
-                    .ThenBy(x => EF.Property<int>(x, "DateCreated"));
+                var query = GetBaseQuery();
                 var totalCount = await query.CountAsync(token);
-                var items = await query.Take(command.PageSize).ToListAsync(token);
-                return new PaginatedList<T>(items, totalCount, command.PageNumber, command.PageSize);
+                var items = OrderQuery(command, query, predicate, keyProperty);
+                var remaining = totalCount - await items.CountAsync(token);
+                var data = items.Take(command.PageSize).ToList();
+                if (command.Direction is Direction.Backward) data.Reverse();
+                return new PaginatedList<T>(data, totalCount, remaining, command.PageSize);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Builds the predicate based on the last entity id and the page navigation direction.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="predicate"></param>
+        /// <param name="keyProperty"></param>
+        /// <returns>A predicate which specifies in which direction data will be queried</returns>
+        private static Expression<Func<T, bool>> BuildPredicate(PaginatedCommand command, Expression<Func<T, bool>> predicate, IProperty keyProperty)
+        {
+            predicate ??= e => true; // PredicateBuilder.True<T>();
+
+            if (command.Direction == Direction.Backward)
+                predicate = predicate.And(e =>
+                    EF.Property<int>(e, keyProperty.Name) < command.LastEntityId);
+            else
+                predicate = predicate.And(e =>
+                    EF.Property<int>(e, keyProperty.Name) > command.LastEntityId);
+
+            return predicate;
+        }
+
+
+        // TODO:: Work on ordering by different criteria
+        /// <summary>
+        /// Orders the query based on the page navigation direction.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="query"></param>
+        /// <param name="predicate"></param>
+        /// <param name="keyProperty"></param>
+        /// <returns>An ordered query result</returns>
+        private static IQueryable<T> OrderQuery(PaginatedCommand command, IQueryable<T> query, Expression<Func<T, bool>> predicate, IProperty keyProperty)
+        {
+            if (command.Direction == Direction.Backward)
+                return query.Where(predicate)
+                    .OrderByDescending(e => EF.Property<int>(e, keyProperty.Name));
+            //.ThenBy(x => EF.Property<int>(x, "DateCreated"));
+            else
+                return query.Where(predicate)
+                    .OrderBy(e => EF.Property<int>(e, keyProperty.Name));
+            //.ThenBy(x => EF.Property<int>(x, "DateCreated"));
         }
 
     }

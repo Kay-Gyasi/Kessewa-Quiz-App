@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Kessewa.Application.Shared.Domain.Models;
 using Kessewa.Quiz.Domain.Entities;
 using Kessewa.Quiz.Processors.Commands;
 using Kessewa.Quiz.Processors.Dtos;
@@ -20,6 +21,7 @@ namespace Kessewa.Quiz.Processors.Mapping
 
             CreateMap<Faculties, FacultyDto>().ReverseMap();
             CreateMap<Faculties, FacultyPageDto>().ReverseMap();
+            CreateMap<PaginatedList<Faculties>, PaginatedList<FacultyPageDto>>().ReverseMap();
             CreateMap<Faculties, FacultyCommand>().ReverseMap();
 
             CreateMap<Lecturers, LecturerDto>().ReverseMap();

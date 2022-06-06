@@ -18,7 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Kessewa.Quiz.Application\Kessewa.Quiz.Application.csproj" />
     <ProjectReference Include="..\Kessewa.Quiz.Persistence\Kessewa.Quiz.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\Base\" />
   </ItemGroup>
 
 </Project>
