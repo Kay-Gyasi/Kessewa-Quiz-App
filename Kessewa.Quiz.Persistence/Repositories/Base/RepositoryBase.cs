@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Kessewa.Application.Shared.Domain.Models;
+﻿using Kessewa.Application.Shared.Domain.Models;
 using Kessewa.Application.Shared.Persistence;
 using Kessewa.Quiz.Domain.Entities.Base;
 using Kessewa.Quiz.Domain.ViewModels;
@@ -16,6 +8,12 @@ using Kessewa.Quiz.Processors.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Kessewa.Quiz.Persistence.Repositories.Base
 {
@@ -24,7 +22,6 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
         private DbSet<T> _entities;
         private readonly KessewaDbContext _context;
         private readonly ILogger<T> _logger;
-        private const double Tolerance = 0.5;
 
         protected RepositoryBase(KessewaDbContext context, ILogger<T> logger)
         {
@@ -220,8 +217,8 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
                 _logger.LogError(ex.Message);
                 throw;
             }
-        }      
-        
+        }
+
         public async Task CommitAsync()
         {
             await _context.SaveChangesAsync();

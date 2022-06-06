@@ -1,13 +1,12 @@
-﻿using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using Kessewa.Application.Shared.Domain.Models;
 using Kessewa.Quiz.Domain.Entities;
 using Kessewa.Quiz.Processors.Commands;
 using Kessewa.Quiz.Processors.Dtos;
 using Kessewa.Quiz.Processors.Dtos.PageDtos;
 using Kessewa.Quiz.Processors.Repositories;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Kessewa.Quiz.Processors.Processors
 {
@@ -62,11 +61,18 @@ namespace Kessewa.Quiz.Processors.Processors
             return _mapper.Map<PaginatedList<CoursePageDto>>(page);
         }
 
+        public async Task<CourseDto> GetAsync(int id)
+        {
+            var course = await _courseRepository.GetAsync(id);
+            return _mapper.Map<CourseDto>(course);
+        }
+
         public async Task DeleteAsync(int courseId)
         {
             var course = await _courseRepository.GetAsync(courseId);
             await _courseRepository.DeleteAsync(course, new CancellationToken());
         }
+
 
 
         private async Task BuildCourseCommand(CourseCommand command)

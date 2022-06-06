@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Kessewa.Quiz.Processors\Kessewa.Quiz.Processors.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Courses\Queries\" />
+  </ItemGroup>
+
 </Project>
