@@ -7,7 +7,6 @@ using Kessewa.Quiz.Processors.Repositories.Base;
 
 namespace Kessewa.Quiz.Processors.Repositories
 {
-    [Repository]
     public interface ICourseRepository : IRepositoryBase<Courses>
     {
     }

@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Processors\" />
+    <Folder Include="Processors\Administration\" />
   </ItemGroup>
 
 </Project>

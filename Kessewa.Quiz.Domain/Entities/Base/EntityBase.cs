@@ -4,10 +4,12 @@ namespace Kessewa.Quiz.Domain.Entities.Base
 {
     public class EntityBase
     {
+        // TODO:: Write processors and controllers
         // TODO:: Build a leaderboard for the top 10 players
         // TODO:: Change types in migration file (nvarchar(max))
         // TODO:: Rest Client
         // TODO:: Integration tests
+        // TODO:: Move shared classes and interfaces to their corresponding shared libraries
 
         public int Id { get; set; }
         public DateTime DateCreated { get; private set; }

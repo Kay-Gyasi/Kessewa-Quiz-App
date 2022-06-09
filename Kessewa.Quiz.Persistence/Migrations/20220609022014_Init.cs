@@ -292,26 +292,6 @@ namespace Kessewa.Quiz.Persistence.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Faculties",
-                columns: new[] { "Id", "Description", "Name" },
-                values: new object[] { 1, null, "Faculty of Engineering" });
-
-            migrationBuilder.InsertData(
-                table: "Faculties",
-                columns: new[] { "Id", "Description", "Name" },
-                values: new object[] { 2, null, "Faculty of Mineralogy" });
-
-            migrationBuilder.InsertData(
-                table: "Departments",
-                columns: new[] { "Id", "Description", "FacultyId", "Name" },
-                values: new object[] { 1, null, 1, "Computer Science and Engineering" });
-
-            migrationBuilder.InsertData(
-                table: "Departments",
-                columns: new[] { "Id", "Description", "FacultyId", "Name" },
-                values: new object[] { 2, null, 2, "Mineral Resources" });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Courses_LecturerId",
                 table: "Courses",

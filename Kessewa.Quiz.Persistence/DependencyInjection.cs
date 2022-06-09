@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using Kessewa.Quiz.Persistence.DatabaseContext;
-using Kessewa.Quiz.Persistence.Repositories;
+﻿using Kessewa.Quiz.Persistence.DatabaseContext;
 using Kessewa.Quiz.Processors.ExceptionHandlers;
-using Kessewa.Quiz.Processors.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Linq;
+using System.Reflection;
 
 namespace Kessewa.Quiz.Persistence
 {
@@ -29,7 +24,7 @@ namespace Kessewa.Quiz.Persistence
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>
-        /// <exception cref="RepositoryNotRegisteredException"></exception>
+        /// <exception cref="RepositoryNotFoundException"></exception>
         public static IServiceCollection AddRepositories(this IServiceCollection services)
         {
             var definedTypes = typeof(DependencyInjection).Assembly.DefinedTypes;
@@ -39,11 +34,10 @@ namespace Kessewa.Quiz.Persistence
 
             foreach (var repository in repositories)
             {
-                services.AddScoped(
-                    repository.GetInterfaces()
-                        .SingleOrDefault(x => x.GetCustomAttribute<RepositoryAttribute>() != null) ??
-                    throw new RepositoryNotRegisteredException("Missing [Repository] tag on repository interface"),
-                    repository);
+                var irepository = repository.GetInterfaces().FirstOrDefault(i => i.Name == $"I{repository.Name}") ??
+                                  throw new RepositoryNotFoundException(
+                                      $"{repository.Name} has no interface with name I{repository.Name}");
+                services.AddScoped(irepository, repository);
             }
 
             return services;

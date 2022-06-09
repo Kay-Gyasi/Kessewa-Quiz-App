@@ -13,9 +13,9 @@ namespace Kessewa.Quiz.Persistence.Configurations
         {
             builder.Property(x => x.Name).IsRequired();
 
-            builder.HasData(
-                Faculties.Create("Faculty of Engineering").SetId(1),
-                Faculties.Create("Faculty of Mineralogy").SetId(2));
+            //builder.HasData(
+            //    Faculties.Create("Faculty of Engineering").SetId(1),
+            //    Faculties.Create("Faculty of Mineralogy").SetId(2));
             base.Configure(builder);
         }
     }

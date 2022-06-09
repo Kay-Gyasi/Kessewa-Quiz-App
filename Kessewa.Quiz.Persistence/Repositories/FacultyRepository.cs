@@ -20,7 +20,7 @@ namespace Kessewa.Quiz.Persistence.Repositories
         {
         }
 
-        public override Expression<Func<Faculties, bool>> GetSearchCondition(string search)
+        protected override Expression<Func<Faculties, bool>> GetSearchCondition(string search)
         {
             return x => EF.Functions.Like(x.Name, $"%{search}%") ||
                         EF.Functions.Like(x.Description, $"%{search}%");

@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
@@ -73,12 +74,6 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             return await KeySetPaginate(paginated, predicate, cancellationToken);
 
         }
-
-        public virtual Expression<Func<T, bool>> GetSearchCondition(string search)
-        {
-            return x => x.DateCreated.ToString().Contains(search);
-        }
-
 
         public async Task InsertAsync(T entity, bool autoCommit = true)
         {
@@ -234,13 +229,19 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
             return await _context.Set<T>().CountAsync();
         }
 
+        // TODO:: Work on lookup tables
         public virtual async Task<List<Lookup>> GetLookupAsync()
         {
-
             return new List<Lookup>();
         }
 
 
+
+
+        protected virtual Expression<Func<T, bool>> GetSearchCondition(string search)
+        {
+            return x => x.DateCreated.ToString(CultureInfo.InvariantCulture).Contains(search);
+        }
 
 
 
@@ -286,7 +287,6 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
 
             return predicate;
         }
-
 
         // TODO:: Work on ordering by different criteria
         /// <summary>

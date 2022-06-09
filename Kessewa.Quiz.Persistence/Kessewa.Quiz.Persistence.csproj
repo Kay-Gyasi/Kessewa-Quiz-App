@@ -21,4 +21,9 @@
     <ProjectReference Include="..\Kessewa.Quiz.Processors\Kessewa.Quiz.Processors.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Repositories\Administration\" />
+  </ItemGroup>
+
 </Project>

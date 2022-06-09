@@ -24,13 +24,13 @@ namespace Kessewa.Quiz.Persistence.Configurations
             });
 
 
-            builder.HasData(
-                Departments.Create("Computer Science and Engineering", 1)
-                    .SetId(1)
-                    .WithDescription(null),
-            Departments.Create("Mineral Resources", 2)
-                    .SetId(2)
-                    .WithDescription(null));
+            //builder.HasData(
+            //    Departments.Create("Computer Science and Engineering", 1)
+            //        .SetId(1)
+            //        .WithDescription(null),
+            //Departments.Create("Mineral Resources", 2)
+            //        .SetId(2)
+            //        .WithDescription(null));
             base.Configure(builder);
         }
     }
