@@ -6,7 +6,7 @@ namespace Kessewa.Quiz.Domain.Enums
 {
     public enum UserType
     {
-        Lecturer,
+        Lecturer = 1,
         Student,
     }
 }

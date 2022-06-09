@@ -6,6 +6,7 @@ namespace Kessewa.Quiz.Processors.Dtos
 {
     public class QuestionDto
     {
+        public int Id { get; set; }
         public int QuizId { get; set; }
         public double MarksAllocated { get; set; }
         public Question Question { get; set; }

@@ -7,6 +7,7 @@ namespace Kessewa.Quiz.Processors.Dtos
 {
     public class SubmissionDto
     {
+        public int Id { get; set; }
         public int QuizId { get; set; }
         public int StudentId { get; set; }
         public DateTime TimeSubmitted { get; set; }

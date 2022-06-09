@@ -35,6 +35,7 @@ namespace Kessewa.Quiz.Processors.Processors
             else
             {
                 faculty = await _facultyRepository.GetAsync(command.Id);
+                faculty.WithName(command.Name);
             }
 
             faculty.WithDescription(command.Description);

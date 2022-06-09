@@ -4,11 +4,11 @@ namespace Kessewa.Quiz.Domain.Entities.Base
 {
     public class EntityBase
     {
-        // TODO:: Write processors and controllers
+        // TODO:: Add docker support
         // TODO:: Build a leaderboard for the top 10 players
         // TODO:: Change types in migration file (nvarchar(max))
         // TODO:: Rest Client
-        // TODO:: Integration tests
+        // TODO:: Integration tests (using a sql server docker instance)
         // TODO:: Move shared classes and interfaces to their corresponding shared libraries
 
         public int Id { get; set; }

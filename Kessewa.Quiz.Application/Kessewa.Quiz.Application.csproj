@@ -18,6 +18,17 @@
 
   <ItemGroup>
     <Folder Include="Features\Courses\Queries\" />
+    <Folder Include="Features\Departments\Queries\" />
+    <Folder Include="Features\Lecturers\Commands\" />
+    <Folder Include="Features\Lecturers\Queries\" />
+    <Folder Include="Features\Questions\Commands\" />
+    <Folder Include="Features\Questions\Queries\" />
+    <Folder Include="Features\Quizzes\Commands\" />
+    <Folder Include="Features\Students\Commands\" />
+    <Folder Include="Features\Students\Queries\" />
+    <Folder Include="Features\Submissions\Commands\" />
+    <Folder Include="Features\Users\Commands\" />
+    <Folder Include="Features\Users\Queries\" />
   </ItemGroup>
 
 </Project>

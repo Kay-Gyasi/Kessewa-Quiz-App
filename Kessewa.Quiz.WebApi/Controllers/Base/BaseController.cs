@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Kessewa.Quiz.WebApi.Controllers.Base
 {
-    [Route("api/[controller]/[action]")]
+    // TODO:: Implement versioning properly
+    
+    [Route("api/v1/[controller]/[action]")]
     [ApiController]
     [Produces("application/json", "application/problem+json")]
     public abstract class BaseController : ControllerBase

@@ -2,7 +2,7 @@
 {
     public enum CreditHours
     {
-        One,
+        One = 1,
         Two,
         Three,
     }

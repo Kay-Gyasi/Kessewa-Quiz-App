@@ -34,6 +34,12 @@ namespace Kessewa.Quiz.Domain.Entities
             Id = id;
             return this;
         }
+
+        public Lecturers WithUserId(int userId)
+        {
+            UserId = userId;
+            return this;
+        }
         public Lecturers OfType(LecturerType type)
         {
             Type = type;

@@ -6,6 +6,7 @@ namespace Kessewa.Quiz.Processors.Dtos
 {
     public class LecturerDto
     {
+        public int Id { get; set; }
         public int UserId { get; set; }
         public LecturerType Type { get; set; }
         public UserDto User { get; set; }

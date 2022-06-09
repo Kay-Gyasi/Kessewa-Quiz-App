@@ -244,7 +244,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Base
         }
 
 
-
+        // Write extension methods for these
         private async Task<PaginatedList<T>> KeySetPaginate(PaginatedCommand command, Expression<Func<T, bool>> predicate, CancellationToken token)
         {
             var keyProperty = _context.Model.FindEntityType(typeof(T)).FindPrimaryKey().Properties[0];

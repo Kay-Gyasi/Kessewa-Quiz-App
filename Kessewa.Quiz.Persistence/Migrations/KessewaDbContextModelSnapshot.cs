@@ -326,9 +326,6 @@ namespace Kessewa.Quiz.Persistence.Migrations
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DepartmentsId")
-                        .HasColumnType("int");
-
                     b.Property<string>("DisplayName")
                         .HasColumnType("nvarchar(max)");
 
@@ -346,7 +343,7 @@ namespace Kessewa.Quiz.Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentsId");
+                    b.HasIndex("DepartmentId");
 
                     b.ToTable("Users");
                 });
@@ -574,9 +571,11 @@ namespace Kessewa.Quiz.Persistence.Migrations
 
             modelBuilder.Entity("Kessewa.Quiz.Domain.Entities.Users", b =>
                 {
-                    b.HasOne("Kessewa.Quiz.Domain.Entities.Departments", null)
+                    b.HasOne("Kessewa.Quiz.Domain.Entities.Departments", "Department")
                         .WithMany("Users")
-                        .HasForeignKey("DepartmentsId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.OwnsOne("Kessewa.Quiz.Domain.ValueObjects.Address", "Address", b1 =>
                         {
@@ -643,6 +642,8 @@ namespace Kessewa.Quiz.Persistence.Migrations
                         });
 
                     b.Navigation("Address");
+
+                    b.Navigation("Department");
 
                     b.Navigation("Email");
 

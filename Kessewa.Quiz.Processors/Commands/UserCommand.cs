@@ -5,6 +5,7 @@ namespace Kessewa.Quiz.Processors.Commands
 {
     public class UserCommand
     {
+        public int Id { get; set; }
         public int DepartmentId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -13,6 +14,8 @@ namespace Kessewa.Quiz.Processors.Commands
         public Email Email { get; set; }
         public Phone Phone { get; set; }
         public Address Address { get; set; }
+
+        public DepartmentCommand Department { get; set; }
         //public byte[] Password { get; set; }
         //public byte[] PasswordKey { get; set; }
     }

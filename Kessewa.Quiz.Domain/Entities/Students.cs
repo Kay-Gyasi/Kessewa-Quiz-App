@@ -11,14 +11,14 @@ namespace Kessewa.Quiz.Domain.Entities
         
         private Students() { }
 
-        private Students(int userId, int departmentId)
+        private Students(int userId)
         {
             UserId = userId;
         }
 
-        public static Students Create(int userId, int departmentId)
+        public static Students Create(int userId)
         {
-            return new Students(userId, departmentId);
+            return new Students(userId);
         }
 
         public Students SetId(int id)

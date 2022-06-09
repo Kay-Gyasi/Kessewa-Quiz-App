@@ -2,7 +2,7 @@
 {
     public enum LecturerType
     {
-        AssistantLecturer,
+        AssistantLecturer = 1,
         Lecturer,
         SeniorLecturer,
     }

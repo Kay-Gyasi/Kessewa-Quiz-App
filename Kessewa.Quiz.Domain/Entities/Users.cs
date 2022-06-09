@@ -16,6 +16,8 @@ namespace Kessewa.Quiz.Domain.Entities
         public Email Email { get; private set; }
         public Phone Phone { get; private set; }
         public Address Address { get; private set; }
+
+        public Departments Department { get; set; }
         //public byte[] Password { get; private set; }
         //public byte[] PasswordKey { get; private set; }
 
@@ -31,8 +33,8 @@ namespace Kessewa.Quiz.Domain.Entities
 
         private Users(string firstName, string lastName)
         {
-            FirstName = firstName;
-            LastName = lastName;
+            FirstName = firstName.Trim();
+            LastName = lastName.Trim();
         }
 
         public static Users Create(string firstName, string lastName)
@@ -47,19 +49,19 @@ namespace Kessewa.Quiz.Domain.Entities
         }
         public Users WithFirstName(string firstName)
         {
-            FirstName = firstName;
+            FirstName = firstName.Trim();
             return this;
         }
 
         public Users WithLastName(string lastName)
         {
-            LastName = lastName;
+            LastName = lastName.Trim();
             return this;
         }
 
         public Users WithDisplayName(string displayName)
         {
-            DisplayName = displayName;
+            DisplayName = displayName ?? FirstName + " " + LastName;
             return this;
         }
 
@@ -99,7 +101,16 @@ namespace Kessewa.Quiz.Domain.Entities
             return this;
         }
 
+        public Users WithDepartmentId(int departmentId)
+        {
+            DepartmentId = departmentId;
+            return this;
+        }
 
-
+        public Users InDepartment(Departments department)
+        {
+            Department = department;
+            return this;
+        }
     }
 }

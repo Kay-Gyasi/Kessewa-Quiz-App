@@ -2,7 +2,7 @@
 {
     public enum LevelType
     {
-        First,
+        First = 1,
         Second,
         Third,
         Fourth,

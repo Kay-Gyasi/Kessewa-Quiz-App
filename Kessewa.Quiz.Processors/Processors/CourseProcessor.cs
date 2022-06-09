@@ -77,10 +77,9 @@ namespace Kessewa.Quiz.Processors.Processors
 
         private async Task BuildCourseCommand(CourseCommand command)
         {
-            if (command.LecturerId != 0)
-            {
-                command.Lecturer = _mapper.Map<LecturerCommand>(await _lecturerRepository.GetAsync(command.LecturerId));
-            }
+            if (command.LecturerId == default) return;
+            var lecturer = await _lecturerRepository.GetAsync(command.LecturerId);
+            command.Lecturer = _mapper.Map<LecturerCommand>(lecturer);
         }
     }
 }
