@@ -9,7 +9,7 @@ using Kessewa.Quiz.Processors.Dtos;
 using Kessewa.Quiz.Processors.Dtos.PageDtos;
 using Kessewa.Quiz.Processors.Repositories;
 
-namespace Kessewa.Quiz.Processors
+namespace Kessewa.Quiz.Processors.Processors
 {
     [Processor]
     public class UserProcessor

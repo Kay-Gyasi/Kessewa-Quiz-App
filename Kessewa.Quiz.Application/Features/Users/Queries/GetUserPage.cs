@@ -1,8 +1,8 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Kessewa.Application.Shared.Domain.Models;
-using Kessewa.Quiz.Processors;
 using Kessewa.Quiz.Processors.Dtos.PageDtos;
+using Kessewa.Quiz.Processors.Processors;
 using MediatR;
 
 namespace Kessewa.Quiz.Application.Features.Users.Queries
