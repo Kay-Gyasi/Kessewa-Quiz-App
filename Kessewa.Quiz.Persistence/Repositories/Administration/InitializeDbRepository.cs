@@ -52,7 +52,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Administration
 
         private async Task SeedFaculties()
         {
-            if (await CheckIfInitialized<Faculties>() == 1) return;
+            if (await IsInitialized<Faculties>()) return;
             var faculties = new List<Faculties>
             {
                 Faculties.Create("Faculty of Engineering"),
@@ -63,7 +63,7 @@ namespace Kessewa.Quiz.Persistence.Repositories.Administration
 
         private async Task SeedDepartments()
         {
-            if (await CheckIfInitialized<Departments>() == 1) return;
+            if (await IsInitialized<Departments>()) return;
             var departments = new List<Departments>
             {
                 Departments.Create("Computer Science and Engineering", 1)
@@ -78,9 +78,9 @@ namespace Kessewa.Quiz.Persistence.Repositories.Administration
 
 
 
-        private async Task<int> CheckIfInitialized<T>() where T : class
+        private async Task<bool> IsInitialized<T>() where T : class
         {
-            return await _context.Set<T>().AnyAsync() ? 1 : 0;
+            return await _context.Set<T>().AnyAsync();
         }
     }
 }
