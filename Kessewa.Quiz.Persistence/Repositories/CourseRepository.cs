@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Kessewa.Quiz.Domain.Entities;
@@ -25,6 +26,14 @@ namespace Kessewa.Quiz.Persistence.Repositories
             return base.GetBaseQuery()
                 .Include(k => k.Lecturer)
                 .Include(k => k.Departments);
+        }
+
+        protected override Expression<Func<Courses, bool>> GetSearchCondition(string search)
+        {
+            return x => EF.Functions.Like(x.Name, $"%{search}%") ||
+                        EF.Functions.Like(x.Level.ToString(), $"%{search}%") ||
+                        EF.Functions.Like(x.Lecturer.User.DisplayName, $"%{search}%") ||
+                        EF.Functions.Like(x.CreditHours.ToString(), $"%{search}%");
         }
 
         public override async Task<List<Lookup>> GetLookupAsync()

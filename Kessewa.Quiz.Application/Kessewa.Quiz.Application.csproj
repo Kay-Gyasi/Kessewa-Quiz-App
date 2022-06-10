@@ -21,6 +21,7 @@
     <Folder Include="Features\Departments\Queries\" />
     <Folder Include="Features\Lecturers\Commands\" />
     <Folder Include="Features\Lecturers\Queries\" />
+    <Folder Include="Features\Lookup\" />
     <Folder Include="Features\Questions\Commands\" />
     <Folder Include="Features\Questions\Queries\" />
     <Folder Include="Features\Quizzes\Commands\" />

@@ -4,6 +4,7 @@ namespace Kessewa.Quiz.Domain.Entities.Base
 {
     public class EntityBase
     {
+        // TODO:: Check repository interfaces (GetSearchCondition)
         // TODO:: Add docker support
         // TODO:: Build a leaderboard for the top 10 players
         // TODO:: Change types in migration file (nvarchar(max))
