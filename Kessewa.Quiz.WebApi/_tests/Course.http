@@ -1,0 +1,37 @@
+﻿@baseUrl=https://localhost:7249/api/v1/courses
+
+POST {{baseUrl}}/getcoursespage
+Content-Type: application/json
+
+{
+	"lastEntityId": 0,
+	"pageSize": 10
+}
+
+###
+
+POST {{baseUrl}}/getcoursespage
+Content-Type: application/json
+
+{
+	"lastEntityId": 3,
+	"pageSize": 10,
+	"direction": 1
+}
+
+###
+
+GET {{baseUrl}}/getcourse/1
+
+###
+
+POST {{baseUrl}}/createorupdate
+Content-Type: application/json
+
+{
+  "lecturerId": 1,
+  "name": "Distributed Systems",
+  "creditHours": 2,
+  "level": 4,
+  "description": "A very advanced guy",
+}

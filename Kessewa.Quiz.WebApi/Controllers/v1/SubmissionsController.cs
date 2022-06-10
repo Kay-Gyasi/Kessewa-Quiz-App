@@ -17,7 +17,7 @@ public class SubmissionsController : BaseController
     public async Task<PaginatedList<SubmissionPageDto>> GetSubmissionsPage([FromBody] PaginatedCommand command) =>
         await Mediator.Send(new GetSubmissionPage.Query(command));
 
-    [HttpGet]
+    [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<SubmissionDto> GetSubmission(int id) =>
@@ -29,7 +29,7 @@ public class SubmissionsController : BaseController
     public async Task<int> CreateOrUpdate([FromBody] SubmissionCommand command) =>
         await Mediator.Send(new SaveSubmission.Command(command));
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task Delete(int id) =>

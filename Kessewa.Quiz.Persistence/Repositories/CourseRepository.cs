@@ -24,7 +24,7 @@ namespace Kessewa.Quiz.Persistence.Repositories
         public override IQueryable<Courses> GetBaseQuery()
         {
             return base.GetBaseQuery()
-                .Include(k => k.Lecturer)
+                .Include(k => k.Lecturer).ThenInclude(k => k.User)
                 .Include(k => k.Departments);
         }
 

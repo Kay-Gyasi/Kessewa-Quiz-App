@@ -17,7 +17,7 @@ public class DepartmentsController : BaseController
     public async Task<PaginatedList<DepartmentPageDto>> GetDepartmentsPage([FromBody] PaginatedCommand command) =>
         await Mediator.Send(new GetDepartmentPage.Query(command));
 
-    [HttpGet]
+    [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<DepartmentDto> GetDepartment(int id) =>
@@ -29,7 +29,7 @@ public class DepartmentsController : BaseController
     public async Task<int> CreateOrUpdate([FromBody] DepartmentCommand command) =>
         await Mediator.Send(new SaveDepartment.Command(command));
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task Delete(int id) =>

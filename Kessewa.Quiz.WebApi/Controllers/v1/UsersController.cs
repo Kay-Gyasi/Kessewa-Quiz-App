@@ -18,7 +18,7 @@ public class UsersController : BaseController
     public async Task<PaginatedList<UserPageDto>> GetUsersPage([FromBody] PaginatedCommand command) =>
         await Mediator.Send(new GetUserPage.Query(command));
 
-    [HttpGet]
+    [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<UserDto> GetUser(int id) =>
@@ -30,7 +30,7 @@ public class UsersController : BaseController
     public async Task<int> CreateOrUpdate([FromBody] UserCommand command) =>
         await Mediator.Send(new SaveUser.Command(command));
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task Delete(int id) =>

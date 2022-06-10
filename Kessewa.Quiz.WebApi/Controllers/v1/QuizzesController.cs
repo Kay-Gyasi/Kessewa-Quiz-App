@@ -17,7 +17,7 @@ public class QuizzesController : BaseController
     public async Task<PaginatedList<QuizPageDto>> GetQuizzesPage([FromBody] PaginatedCommand command) =>
         await Mediator.Send(new GetQuizPage.Query(command));
 
-    [HttpGet]
+    [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<QuizDto> GetQuiz(int id) =>
@@ -29,7 +29,7 @@ public class QuizzesController : BaseController
     public async Task<int> CreateOrUpdate([FromBody] QuizCommand command) =>
         await Mediator.Send(new SaveQuiz.Command(command));
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task Delete(int id) =>

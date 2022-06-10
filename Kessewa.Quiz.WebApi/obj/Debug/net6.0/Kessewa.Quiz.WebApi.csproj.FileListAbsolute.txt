@@ -94,3 +94,7 @@ C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\Kessewa.Quiz.WebApi.pdb
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\Kessewa.Quiz.WebApi.genruntimeconfig.cache
 C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\obj\Debug\net6.0\ref\Kessewa.Quiz.WebApi.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\RestClient.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\admin\source\repos\Kessewa Quiz App\Kessewa.Quiz.WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

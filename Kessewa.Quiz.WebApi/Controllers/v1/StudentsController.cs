@@ -17,7 +17,7 @@ public class StudentsController : BaseController
     public async Task<PaginatedList<StudentPageDto>> GetStudentsPage([FromBody] PaginatedCommand command) =>
         await Mediator.Send(new GetStudentPage.Query(command));
 
-    [HttpGet]
+    [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<StudentDto> GetStudent(int id) =>
@@ -29,7 +29,7 @@ public class StudentsController : BaseController
     public async Task<int> CreateOrUpdate([FromBody] StudentCommand command) =>
         await Mediator.Send(new SaveStudent.Command(command));
 
-    [HttpDelete]
+    [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task Delete(int id) =>
